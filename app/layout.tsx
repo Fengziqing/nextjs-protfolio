@@ -28,9 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full">
-      <body className={`${Poppin.className} relative`}>
+      <body className={`${Poppin.className} relative flex justify-center xl:justify-normal`}>
         <NavBar />
-        <main className=" h-full w-2/3 ml-[calc(34%)]">
+        <main className="
+        w-full justify-center mt-16
+        sm:mt-20
+        xl:h-full xl:w-2/3 xl:ml-[calc(34%)] xl:mt-0">
           {children}
         </main>
       </body>
