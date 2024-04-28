@@ -31,9 +31,10 @@ export default function RootLayout({
       <body className={`${Poppin.className} relative flex justify-center xl:justify-normal`}>
         <NavBar />
         <main className="
-        w-full justify-center mt-16
+        w-full justify-center mt-16 min-h-auto
         sm:mt-20
-        xl:h-full xl:w-2/3 xl:ml-[calc(34%)] xl:mt-0">
+        md:mt-16
+        xl:h-full xl:w-2/3 xl:ml-[calc(35%)] xl:mt-0 xl:p-3.5">
           {children}
         </main>
       </body>
