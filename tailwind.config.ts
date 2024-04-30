@@ -25,8 +25,13 @@ const config: Config = {
     },
     gridTemplateColumns: {
       // Simple 16 column grid
-      'row-col-8': 'repeat(8, 100px)',
-      'col-13': 'repeat(13, 100px)',
+      'row-col-8': 'repeat(8, 95px)',
+      'col-4':'repeat(4, 95px)',
+    },
+    gridTemplateRows:{
+      'row-col-8': 'repeat(8, 95px)',
+      'row-25': 'repeat(25, 95px)',
+      'row-13':'repeat(13, 95px)'
     }
   },
   plugins: [require("daisyui")],

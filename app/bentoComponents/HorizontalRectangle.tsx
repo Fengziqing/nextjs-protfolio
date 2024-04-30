@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const HorizontalRectangle = ({ imgsrc, imgalt }: { imgsrc: string, imgalt: string }) => {
     return (
-        <div className="round-badge overflow-hidden w-96 h-48 shadow-lg">
-            <Image src={imgsrc} alt={imgalt} width={384} height={200} className=' object-cover'/>
+        <div className="w-96 h-44 rounded-badge overflow-hidden shadow-lg">
+            <Image src={imgsrc} alt={imgalt} width={384} height={200} className=' object-cover w-full'/>
         </div>
     )
 }

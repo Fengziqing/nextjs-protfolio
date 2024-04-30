@@ -9,7 +9,7 @@ import Navigation from './navBarComponents/Navigation';
 
 const NavBar = () => {
     return (
-        <div className='bg-navGreen fixed justify-center w-full h-12 flex
+        <div className='bg-navGreen fixed justify-center w-full h-12 flex z-50
                         sm:m-2 sm:w-11/12 sm:rounded-3xl sm:h-14
                         xl:rounded-none xl:rounded-tr-3xl xl:block xl:m-0 xl:p-9 xl:w-1/3 xl:h-full'>
             <Link href='/' className='md:hidden'>
