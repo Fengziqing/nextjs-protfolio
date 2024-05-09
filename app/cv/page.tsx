@@ -1,7 +1,9 @@
+'use client'
 import React from 'react';
 import DownloadCV from '../pages/download';
+import spot from '@/public/images/spot.svg';
 import Image from 'next/image';
-import Experience from './Experience';
+import './cv.scss';
 
 const Cv = () => {
   const language = ['React','Javascrip','Typescript','Python','HTML',
@@ -12,9 +14,9 @@ const Cv = () => {
   const platform = ['Heroku','Vercel'];
   const others = ['Unit Testing','Jest','CI/CD'];
 
-  function handleClick(link){
-      const newpage = window.open('about:blank');
-      newpage.location.href = link;
+  function handleClick(link:string){
+      // const newpage = window.open('about:blank');
+      // newpage.location.href = link;
   }
 
   return (
@@ -25,7 +27,7 @@ const Cv = () => {
               <div className="ocha">
                   <div className="school-name">
                       <p>Language <br /><span> - All professional proficiency or above - </span></p>
-                      <img className="spot" src={spot} alt="spot" />
+                      <Image className="spot" src={spot} alt="spot" />
                   </div>
                   <ul className="ul-normal">
                       <li>Chinese - native speaker</li>
@@ -36,22 +38,22 @@ const Cv = () => {
               <div className="ocha">
                   <div className="school-name">
                       <p>Development</p>
-                      <img className="spot" src={spot} alt="spot" />
+                      <Image className="spot" src={spot} alt="spot" />
                   </div>
                   <ul className="development-language">
-                      {language.map(item => <li className="language-label">{item}</li>)}
-                      {tools.map(item => <li className="tools">{item}</li>)}
-                      {apps.map(item => <li className="apps">{item}</li>)}
-                      {database.map(item => <li className="database">{item}</li>)}
-                      {platform.map(item => <li className="platform">{item}</li>)}
-                      {others.map(item => <li className="others">{item}</li>)}
+                      {language.map(item => <li key={item} className="language-label">{item}</li>)}
+                      {tools.map(item => <li key={item}  className="tools">{item}</li>)}
+                      {apps.map(item => <li key={item}  className="apps">{item}</li>)}
+                      {database.map(item => <li key={item}  className="database">{item}</li>)}
+                      {platform.map(item => <li key={item}  className="platform">{item}</li>)}
+                      {others.map(item => <li key={item}  className="others">{item}</li>)}
                   </ul>
               </div>
               <div className="seperater">Work Experience </div>
               <div className="ocha">
                   <div className="school-name">
                       <p>Freelancer<br /><span>2023.10 - now</span></p>
-                      <img className="spot" src={spot} alt="spot" />
+                      <Image className="spot" src={spot} alt="spot" />
                   </div>
                   <ul className="ul-normal">
                       <li>This Website: 100% developed and designed by myself<br /> github: <span className="name-explanation" onClick={()=>handleClick("https://github.com/Fengziqing/portfolio")}>https://github.com/Fengziqing/portfolio</span></li>
@@ -61,7 +63,7 @@ const Cv = () => {
                   <div className="school-name">
                       <p>Client Engineer<br /> <span className="name-explanation"
                           onClick={()=>handleClick("https://zoom.us/")}>ZOOM</span> <br /><span> HangZhou, China <br />2022 - 2023</span></p>
-                      <img className="spot" src={spot} alt="spot" />
+                          <Image className="spot" src={spot} alt="spot" />
                   </div>
                   <ul className="ul-normal">
                       <li>Led the development of <span className="name-explanation"
@@ -97,7 +99,8 @@ const Cv = () => {
                   <div className="school-name">
                       <p>Master degree <br /> <span className="name-explanation"
                           onClick={()=>handleClick("https://www.ocha.ac.jp/index.html")}>Ochanomizu University</span> <br /><span>Tokyo, Japa</span> <br /> <span>2020 - 2022</span>
-                      </p><img className="spot" src={spot} alt="spot" />
+                      </p>
+                      <Image className="spot" src={spot} alt="spot" />
                   </div>
                   <ul className="ul-normal">
                       <li>Computer Science Master degree in <span className="name-explanation"
@@ -108,7 +111,7 @@ const Cv = () => {
                           Encouragement Award  </span>, The 84th National Convention of the
                           Information Processing Society of Japan(IPSJ), 2022
                           <br />ZIQING FENG, Mana SASAGAWA, Itiro SIIO, Yasushi MATOBA, “<span className="name-explanation"
-                              href="http://is.ocha.ac.jp/~siio/projects/papers/ipsj2022/7Y-03.pdf">control by using
+                              onClick={()=>handleClick("http://is.ocha.ac.jp/~siio/projects/papers/ipsj2022/7Y-03.pdf")}>control by using
                               half-reflective AR mirror display  </span>“
                       </li>
                       <li><span className="name-explanation"

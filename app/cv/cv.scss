@@ -1,0 +1,156 @@
+.cv {
+    display: block;
+    position: relative;
+    margin-left: 30px;
+
+    .seperater {
+        width: 100%;
+        font-size: 27px;
+        text-align: center;
+        font-weight: bolder;
+        padding-top: 20px;
+        padding-bottom: 0;
+        color: orange;
+    }
+
+    .name-explanation {
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: bolder;
+        position: relative;
+        margin-right: 18px;
+
+        &:hover {
+            color: darkblue;
+        }
+    }
+
+    .name-explanation::after{
+        content: '';
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        bottom: 1px;
+        background-image: url('link.svg');
+        background-size: cover; 
+    }
+
+    .ocha {
+        display: flex;
+        animation: fadeInUp 0.8s;
+        margin: 10px;
+
+        .school-name {
+            position: sticky;
+            top: 100px;
+            width: 250px;
+            height: 100px;
+            display: flex;
+
+            p {
+                font-size: larger;
+                font-style: normal;
+                text-align: left;
+                font-weight: bold;
+
+                span {
+                    line-height: 20px;
+                    font-size: medium;
+                    font-weight: lighter;
+                    color: gray;
+                }
+            }
+
+            .spot {
+                width: 40px;
+                height: 40px;
+                margin: 0 20px 0px auto;
+            }
+        }
+
+        .development-language {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-right: 20px;
+            width: 550px;
+            display: flex;
+            height: auto;
+            flex-wrap: wrap;
+
+            li {
+                margin-right: 20px;
+                margin-bottom: 20px;
+                padding: 10px 2px;
+                width: 140px;
+                border-radius: 18px;
+                color: white;
+                text-align: center;
+                white-space: nowrap;
+                font-size: large;
+                list-style-type: none;
+
+                &:hover {
+                    box-shadow: 2px 3px 0 0 #c0b5b9;
+                }
+            }
+
+            .language-label {
+                background-color: #8ca8be;
+            }
+
+            .tools {
+                background-color: #D7BCBB;
+            }
+
+            .apps {
+                background-color: #E7CD97;
+            }
+
+            .database {
+                background-color: #6E8F8D;
+                ;
+            }
+
+            .platform {
+                background-color: #709ED0;
+            }
+
+            .others {
+                background-color: #9E927E;
+                ;
+            }
+        }
+
+        .ul-normal {
+            line-height: 27px;
+            font-size: medium;
+            font-style: italic;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+            width: 550px;
+            color: darkgray;
+
+            li {
+                margin-right:0;
+                margin-bottom: 20px;
+                transition: padding 0.5s;
+
+                .skill{
+                    color:#589da4
+                }
+
+                .language{
+                    color: orange;
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    color: black;
+                    font-weight: bold;
+                    font-size: larger;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                }
+            }
+        }
+    }
+}
