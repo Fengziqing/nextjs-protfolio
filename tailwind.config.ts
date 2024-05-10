@@ -34,6 +34,8 @@ const config: Config = {
       'row-13':'repeat(13, 95px)'
     }
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui")
+  ],
 };
 export default config;
