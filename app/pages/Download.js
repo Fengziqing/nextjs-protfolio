@@ -11,7 +11,7 @@ const DownloadCV = () => {
         downloadLink.click();
     }
     return (
-        <div className=" pt-12 text-3xl w-full text-center">
+        <div className=" p-12 text-3xl w-full text-center">
             <span>➡️ ➡️ ➡️ </span>
             <button className='btn w-64 bg-[#efd96f] rounded-2xl shadow-xl border-none 
                             hover:bg-[#589da4] hover:text-white' 

@@ -1,0 +1,104 @@
+'use client'
+import React, { ChangeEvent, ChangeEventHandler, useState } from 'react'
+import internal from 'stream'
+
+interface task{
+    name: string,
+    id: number,
+    isDone: boolean,
+    isEditing: boolean
+}
+const TodoList = () => {
+    const [taskName, setTaskName] = useState<string>('');
+    const [task, setTask] = useState<task[]>([]);
+    const [editValue, setEditValue] = useState<string>('');
+    const [wrongMessage, setWrongMessage] = useState<string>('');
+
+    function handleTaskNameChange(e:ChangeEvent<HTMLInputElement>) {
+        setTaskName(e.target.value);
+    }
+    function addTask() {
+        if (taskName.length === 0) {
+            setWrongMessage('task name cannot be null');
+            setTimeout(() => {
+                setWrongMessage('');
+            }, 5000);
+            return;
+        }
+        const newTask = {
+            'name': taskName,
+            'id': Math.random(),
+            'isDone': false,
+            'isEditing': false
+        };
+        setTask(task.concat(newTask));
+        setTaskName('');
+    }
+    function handleClickDone(targetId:number) {
+        const newTask = task.map(item => item.id === targetId ? { ...item, isDone: true } : item);
+        setTask(newTask);
+    }
+    function handleCleanAllDone() {
+        const newTask = task.filter(item => item.isDone === false)
+        setTask(newTask);
+    }
+    function handleClickEdit(targetId:number) {
+        setTask(task.map(item => item.id === targetId ? { ...item, isEditing: true } : item));
+    }
+    function handleEditValue(e:ChangeEvent<HTMLInputElement>) {
+        setEditValue(e.target.value);
+
+    }
+    function saveChange(targetId:number) {
+        if (editValue.length === 0) {
+            setWrongMessage('task name cannot be null');
+            setTimeout(() => {
+                setWrongMessage('');
+            }, 5000);
+            return;
+        }
+        const newTask = task.map(item => item.id === targetId ? { ...item, name: editValue, isDone: false, isEditing: false } : item);
+        setTask(newTask);
+    }
+    function cancelChange(targetId:number) {
+        setTask(task.map(item => item.id === targetId ? { ...item, isEditing: false } : item));
+    }
+
+    return (
+        <div className="todo-list">
+            <div className='input-area'>
+                <input className='input' type='text' value={taskName} onChange={handleTaskNameChange}></input>
+                <button className='addbutton' onClick={addTask}>ADD</button>
+            </div>
+            <p className='wrong-message'>{wrongMessage}</p>
+            <h2>To Do List</h2>
+            <p className='notice'>*Please notice that this To-Do List will not save any data from you.*</p>
+            <ul>
+                {
+                    task.map(item => {
+                        return (
+                            <li key={item.id}>
+                                {item.isEditing
+                                    ?
+                                    <>
+                                        <input className='edit-area' type='text' value={editValue} onChange={handleEditValue}></input>
+                                        <button onClick={() => cancelChange(item.id)}>Cancel</button>
+                                        <button onClick={() => saveChange(item.id)}>Save</button>
+                                    </>
+                                    :
+                                    <>
+                                        <p style={{ textDecoration: item.isDone ? 'line-through' : 'none' }} >{item.name}</p>
+                                        <button onClick={() => handleClickDone(item.id)}>Done</button>
+                                        <button onClick={() => handleClickEdit(item.id)}>Edit</button>
+                                    </>}
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            <button className='clean-all-done' onClick={handleCleanAllDone}>Clean All Done</button>
+        </div>
+    )
+}
+
+export default TodoList

@@ -15,8 +15,7 @@ const Cv = () => {
   const others = ['Unit Testing','Jest','CI/CD'];
 
   function handleClick(link:string){
-      // const newpage = window.open('about:blank');
-      // newpage.location.href = link;
+      window.open(link,'_blank');
   }
 
   return (
