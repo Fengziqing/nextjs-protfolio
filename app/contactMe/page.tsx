@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { ChangeEvent, EventHandler, useState } from 'react';
 import axios from 'axios';
 
 const ContaceMe = () => {
@@ -20,13 +20,13 @@ const ContaceMe = () => {
     setSendOk(false);
   }
 
-  const handleNameChange = (e) => {
+  const handleNameChange = (e:ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (e:ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  const handleMessageChange = (e) => {
+  const handleMessageChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
 
@@ -117,13 +117,13 @@ const ContaceMe = () => {
           <form onSubmit={handleSend} className='[&>*]:my-8 [&>*]:border-none [&>*]:rounded-2xl [&>*]:text-lg'>
             <label className="input input-bordered flex items-center gap-2">
               Name
-              <input type="text" className="grow" placeholder="haru" />
+              <input type="text" className="grow" placeholder="haru" onChange={handleNameChange}/>
             </label>
             <label className="input input-bordered flex items-center gap-2">
               Email
-              <input type="text" className="grow" placeholder="haru@feng.com" />
+              <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange}/>
             </label>
-            <textarea className="textarea textarea-bordered w-full" placeholder="Leave your messages here ..."></textarea>
+            <textarea className="textarea textarea-bordered w-full" placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
             <button className="btn btn-wide text-white bg-[#deb0bd] shadow-lg
                                hover:text-gray-600 hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
           </form>

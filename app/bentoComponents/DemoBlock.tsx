@@ -1,5 +1,6 @@
 'use client'
-import React from 'react'
+import React from 'react';
+import {useRouter} from 'next/navigation';
 import Image from 'next/image';
 
 interface Props {
@@ -7,13 +8,15 @@ interface Props {
     imgalt: string;
     title: string;
     bgcolor: string;
-    description: string
+    description: string;
+    demoLinkString:String
 }
 
-const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description }: Props) => {
+const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description, demoLinkString}: Props) => {
+    const router = useRouter();
 
     function handleClick() {
-
+        router.push(`/demo/${demoLinkString}`);
     }
 
     return (

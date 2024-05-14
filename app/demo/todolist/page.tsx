@@ -1,8 +1,7 @@
 'use client'
-import React, { ChangeEvent, ChangeEventHandler, useState } from 'react'
-import internal from 'stream'
+import React, { ChangeEvent, useState } from 'react'
 
-interface task{
+interface task {
     name: string,
     id: number,
     isDone: boolean,
@@ -14,7 +13,7 @@ const TodoList = () => {
     const [editValue, setEditValue] = useState<string>('');
     const [wrongMessage, setWrongMessage] = useState<string>('');
 
-    function handleTaskNameChange(e:ChangeEvent<HTMLInputElement>) {
+    function handleTaskNameChange(e: ChangeEvent<HTMLInputElement>) {
         setTaskName(e.target.value);
     }
     function addTask() {
@@ -34,7 +33,7 @@ const TodoList = () => {
         setTask(task.concat(newTask));
         setTaskName('');
     }
-    function handleClickDone(targetId:number) {
+    function handleClickDone(targetId: number) {
         const newTask = task.map(item => item.id === targetId ? { ...item, isDone: true } : item);
         setTask(newTask);
     }
@@ -42,14 +41,14 @@ const TodoList = () => {
         const newTask = task.filter(item => item.isDone === false)
         setTask(newTask);
     }
-    function handleClickEdit(targetId:number) {
+    function handleClickEdit(targetId: number) {
         setTask(task.map(item => item.id === targetId ? { ...item, isEditing: true } : item));
     }
-    function handleEditValue(e:ChangeEvent<HTMLInputElement>) {
+    function handleEditValue(e: ChangeEvent<HTMLInputElement>) {
         setEditValue(e.target.value);
 
     }
-    function saveChange(targetId:number) {
+    function saveChange(targetId: number) {
         if (editValue.length === 0) {
             setWrongMessage('task name cannot be null');
             setTimeout(() => {
@@ -60,43 +59,43 @@ const TodoList = () => {
         const newTask = task.map(item => item.id === targetId ? { ...item, name: editValue, isDone: false, isEditing: false } : item);
         setTask(newTask);
     }
-    function cancelChange(targetId:number) {
+    function cancelChange(targetId: number) {
         setTask(task.map(item => item.id === targetId ? { ...item, isEditing: false } : item));
     }
 
     return (
-        <div className="todo-list">
-            <div className='input-area'>
+        <div className=" block py-12 px-2 content-center justify-center">
+            <div className='flex content-center'>
                 <input className='input' type='text' value={taskName} onChange={handleTaskNameChange}></input>
-                <button className='addbutton' onClick={addTask}>ADD</button>
+                <button className='btn btn-neutral ml-2' onClick={addTask}>ADD</button>
             </div>
-            <p className='wrong-message'>{wrongMessage}</p>
-            <h2>To Do List</h2>
-            <p className='notice'>*Please notice that this To-Do List will not save any data from you.*</p>
-            <ul>
+            <p className=' text-red-500 italic my-2'>{wrongMessage}</p>
+            <p className=' font-bold text-2xl'>To Do List</p>
+            <p className=' text-gray-500 italic text-sm'>*Please notice that this To-Do List will not save any data from you.*</p>
+            <ul className=' font-bold text-lg '>
                 {
                     task.map(item => {
                         return (
-                            <li key={item.id}>
+                            <li className=' flex my-3' key={item.id}>
                                 {item.isEditing
                                     ?
                                     <>
-                                        <input className='edit-area' type='text' value={editValue} onChange={handleEditValue}></input>
-                                        <button onClick={() => cancelChange(item.id)}>Cancel</button>
-                                        <button onClick={() => saveChange(item.id)}>Save</button>
+                                        <input className=' input-ghost text-sm font-normal' type='text' value={editValue} onChange={handleEditValue}></input>
+                                        <button className='btn btn-active ml-3 btn-sm' onClick={() => cancelChange(item.id)}>Cancel</button>
+                                        <button className='btn btn-neutral ml-3 btn-sm' onClick={() => saveChange(item.id)}>Save</button>
                                     </>
                                     :
                                     <>
                                         <p style={{ textDecoration: item.isDone ? 'line-through' : 'none' }} >{item.name}</p>
-                                        <button onClick={() => handleClickDone(item.id)}>Done</button>
-                                        <button onClick={() => handleClickEdit(item.id)}>Edit</button>
+                                        <button className='btn btn-success btn-sm ml-2' onClick={() => handleClickDone(item.id)}>Done</button>
+                                        <button className='btn btn-outline btn-sm ml-2' onClick={() => handleClickEdit(item.id)}>Edit</button>
                                     </>}
                             </li>
                         )
                     })
                 }
             </ul>
-            <button className='clean-all-done' onClick={handleCleanAllDone}>Clean All Done</button>
+            <button className='btn btn-success' onClick={handleCleanAllDone}>Clean All Done</button>
         </div>
     )
 }
