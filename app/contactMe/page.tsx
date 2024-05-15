@@ -106,24 +106,24 @@ const ContaceMe = () => {
   return (
     <>
       <div className="block overflow-hidden text-center">
-        <p className=" text-center w-full p-10 justify-center text-4xl text-blue-950 leading-relaxed
+        <p className=" text-center w-full p-10 justify-center text-4xl leading-relaxed
                     [&>*]:text-orange-700 [&>*]:font-bold">
           Have an Awsome Idea? <span>Let&apos;s Discuss!🤔</span>
           <br />Want <span>Hire me</span>? Send me your <span>e-mail!📧</span>
           <br />Wanna Be friends with me?<span> Leave a message!⬇️</span>
           <br />...
         </p>
-        <div className="block w-[480px] mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] rounded-3xl py-8 px-12 mx-auto">
+        <div className="block w-[480px] mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl py-8 px-12 mx-auto">
           <form onSubmit={handleSend} className='[&>*]:my-8 [&>*]:border-none [&>*]:rounded-2xl [&>*]:text-lg'>
-            <label className="input input-bordered flex items-center gap-2">
+            <label className="input input-bordered flex items-center gap-2 text-gray-600">
               Name
-              <input type="text" className="grow" placeholder="haru" onChange={handleNameChange}/>
+              <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange}/>
             </label>
-            <label className="input input-bordered flex items-center gap-2">
+            <label className="input input-bordered flex items-center gap-2 text-gray-600">
               Email
               <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange}/>
             </label>
-            <textarea className="textarea textarea-bordered w-full" placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
+            <textarea className="textarea textarea-bordered w-full text-gray-600" placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
             <button className="btn btn-wide text-white bg-[#deb0bd] shadow-lg
                                hover:text-gray-600 hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
           </form>

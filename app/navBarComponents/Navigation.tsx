@@ -19,7 +19,7 @@ const Navigation = () => {
                 <Link
                     key={PageName}
                     href={hrefLink}
-                    className={`${isActive(hrefLink) ? 'text-[#FFE071] bg-navBrown shadow-lg rounded-md xl:bg-none xl:shadow-none xl:rounded-none' : ''} 
+                    className={`${isActive(hrefLink) ? 'text-[#FFE071] bg-navBrown shadow-lg rounded-md xl:bg-none xl:shadow-none xl:rounded-none' : ' text-black'} 
                                 mx-2 my-4 px-1 text-xs cursor-pointer transition-all duration-300
                                 sm:mx-3 sm:my-4 sm:px-2 sm:py-0 sm:text-sm
                                 md:mx-4 md:my-4 md:px-3 md:text-base

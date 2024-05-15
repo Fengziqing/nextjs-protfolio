@@ -20,7 +20,7 @@ const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description, demoLinkString
     }
 
     return (
-        <button className={`btn w-96 h-44 rounded-3xl ${bgcolor === '' ? 'bg-[#F0EAE0]' : bgcolor} overflow-hidden p-0 border-none
+        <button className={`btn w-96 h-44 rounded-3xl ${bgcolor === '' ? 'bg-[#F0EAE0] opacity-70' : bgcolor} overflow-hidden p-0 border-none
                              hover:shadow-2xl`}
             onClick={handleClick}>
             <div className={`${imgsrc === '' ? 'w-1/5' : 'w-1/2'}

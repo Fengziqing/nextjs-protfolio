@@ -68,7 +68,7 @@ const TodoList = () => {
         <div className=" block mx-12 py-12 px-2 content-center justify-center">
             <BacktoDemoButtom/>
             <div className='flex content-center'>
-                <input className='input input-bordered' type='text' value={taskName} onChange={handleTaskNameChange}></input>
+                <input className='input text-black' type='text' value={taskName} onChange={handleTaskNameChange}></input>
                 <button className='btn btn-neutral ml-2' onClick={addTask}>ADD</button>
             </div>
             <p className=' text-red-500 italic my-2'>{wrongMessage}</p>
