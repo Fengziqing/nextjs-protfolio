@@ -21,6 +21,7 @@ const config: Config = {
         navFontGray: "#4c484f",
         linkPink: "#dfc0c2",
         linkHover: "#ebcda7",
+        webPink: "#fdf4f3",
       }
     },
     gridTemplateColumns: {
@@ -37,5 +38,8 @@ const config: Config = {
   plugins: [
     require("daisyui")
   ],
+  daisyui: {
+    themes: ["cupcake"],
+  }
 };
 export default config;

@@ -1,5 +1,6 @@
 'use client'
 import React, { ChangeEvent, useState } from 'react'
+import { BacktoDemoButtom } from '../BacktoDemoButtom'
 
 interface task {
     name: string,
@@ -64,19 +65,20 @@ const TodoList = () => {
     }
 
     return (
-        <div className=" block py-12 px-2 content-center justify-center">
+        <div className=" block mx-12 py-12 px-2 content-center justify-center">
+            <BacktoDemoButtom/>
             <div className='flex content-center'>
-                <input className='input' type='text' value={taskName} onChange={handleTaskNameChange}></input>
+                <input className='input input-bordered' type='text' value={taskName} onChange={handleTaskNameChange}></input>
                 <button className='btn btn-neutral ml-2' onClick={addTask}>ADD</button>
             </div>
             <p className=' text-red-500 italic my-2'>{wrongMessage}</p>
-            <p className=' font-bold text-2xl'>To Do List</p>
-            <p className=' text-gray-500 italic text-sm'>*Please notice that this To-Do List will not save any data from you.*</p>
+            <p className=' font-bold text-2xl my-6'>To Do List</p>
+            <p className=' text-gray-400 italic text-sm my-5'>*Please notice that this To-Do List will not save any data from you.*</p>
             <ul className=' font-bold text-lg '>
                 {
                     task.map(item => {
                         return (
-                            <li className=' flex my-3' key={item.id}>
+                            <li className=' flex my-3 break-words' key={item.id}>
                                 {item.isEditing
                                     ?
                                     <>
@@ -95,7 +97,7 @@ const TodoList = () => {
                     })
                 }
             </ul>
-            <button className='btn btn-success' onClick={handleCleanAllDone}>Clean All Done</button>
+            <button className='btn btn-success my-6' onClick={handleCleanAllDone}>Clean All Done</button>
         </div>
     )
 }

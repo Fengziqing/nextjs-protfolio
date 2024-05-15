@@ -4,29 +4,25 @@
 @import 'animate.css';
 
 :root {
-  --backgroud-rgb:253,244,243;
   --foreground-rgb: 0, 0, 0;
   
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --backgroud-rgb:253,244,243;
-    --foreground-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;
     /* --backgroud-rgb:0,0,0;
     --foreground-rgb: 255, 255, 255; */
   }
 }
 
 body {
-  height: 100%;
-  background-color: rgb(var(--backgroud-rgb));
   color: rgb(var(--foreground-rgb));
 }
 /*改变全局的样式*/
 @layer base{ 
   /*h1 变成如下样式*/
-  /* h1{
+  h1{
     @apply font-extrabold text-2xl mb-3
-  } */
+  }
 }

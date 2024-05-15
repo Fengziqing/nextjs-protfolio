@@ -29,7 +29,7 @@ const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description, demoLinkString
                         className=' h-full object-cover'
                         onError={({currentTarget}) => currentTarget.style.display = 'none'}/>
             </div>
-            <div className={`${imgsrc === '' ? 'w-3/5' : 'w-2/5'} pl-2 text-gray-500`}>
+            <div className={`${imgsrc === '' ? 'w-3/5' : 'w-2/5'} pl-2`}>
                 <p className=' text-lg font-bold text-left mb-1'>{title === '' ? 'developing block' : title}</p>
                 <div className=' text-sm font-normal text-left'>{description === '' ? 'place-holder for testing, nothing here, if you have any ideas, please contact me!' : description}</div>
             </div>

@@ -1,5 +1,5 @@
 'use client';
-import React, { ChangeEvent, EventHandler, useState } from 'react';
+import React, { ChangeEvent, EventHandler, FormEvent, useState } from 'react';
 import axios from 'axios';
 
 const ContaceMe = () => {
@@ -64,7 +64,7 @@ const ContaceMe = () => {
     setNeedBlur(false);
   }
 
-  function handleSend(e) {
+  function handleSend(e:FormEvent) {
     e.preventDefault();
     //data checking
     if (name.length === 0) {
@@ -94,7 +94,7 @@ const ContaceMe = () => {
         setMessageErrorText('');
       }, 5000);
       return;
-    } else if (message.length > 5) {
+    } else if (message.length > 500) {
       setMessageErrorText('Your message is too long ❌ , should shorter than 500 letters ✅');
       setTimeout(() => {
         setMessageErrorText('');

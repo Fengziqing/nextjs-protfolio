@@ -17,7 +17,7 @@ const Demo = () => {
         </div>
         <div className=" col-start-1 col-end-5 md:row-start-4 md:row-end-6
                          row-start-6 row-end-8" >
-          <DemoBlock imgsrc='' imgalt='' title='' bgcolor='' description='' demoLinkString='developingPage'/>
+          <DemoBlock imgsrc='ToDoList' imgalt='ToDoList' title='Table' bgcolor='bg-[#9fb0cf]' description='111' demoLinkString='table'/>
         </div>
         <div className=" md:col-start-5 md:col-end-9 md:row-start-4 md:row-end-6
                          col-start-1 col-end-5 row-start-8 row-end-10">
