@@ -104,17 +104,20 @@ const ContaceMe = () => {
     sendingData();
   }
   return (
-    <>
-      <div className="block overflow-hidden text-center">
-        <p className=" text-center w-full p-10 justify-center text-4xl leading-relaxed
+      <div className="block text-center">
+        <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed
+                      sm:text-2xl sm:p-5
+                      xl:text-4xl xl:p-10
                     [&>*]:text-orange-700 [&>*]:font-bold">
           Have an Awsome Idea? <span>Let&apos;s Discuss!🤔</span>
           <br />Want <span>Hire me</span>? Send me your <span>e-mail!📧</span>
           <br />Wanna Be friends with me?<span> Leave a message!⬇️</span>
           <br />...
         </p>
-        <div className="block w-[480px] mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl py-8 px-12 mx-auto">
-          <form onSubmit={handleSend} className='[&>*]:my-8 [&>*]:border-none [&>*]:rounded-2xl [&>*]:text-lg'>
+        <div className="block w-96 lg:w-[480px] mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl py-8 px-12 mx-auto">
+          <form onSubmit={handleSend} className='[&>*]:my-4 [&>*]:border-none [&>*]:rounded-2xl [&>*]:text-sm
+                                                  [&>*]:sm:my-6 [&>*]:sm:text-base
+                                                  [&>*]:lg:my-8 [&>*]:lg:text-lg'>
             <label className="input input-bordered flex items-center gap-2 text-gray-600">
               Name
               <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange}/>
@@ -129,7 +132,6 @@ const ContaceMe = () => {
           </form>
         </div>
       </div>
-    </>
   )
 }
 

@@ -21,18 +21,18 @@
         margin-right: 18px;
 
         &:hover {
-            color: darkblue;
+            color: pink;
         }
     }
 
-    .name-explanation::after{
+    .name-explanation::after {
         content: '';
         height: 16px;
         width: 16px;
         position: absolute;
         bottom: 1px;
         background-image: url('link.svg');
-        background-size: cover; 
+        background-size: cover;
     }
 
     .ocha {
@@ -70,7 +70,7 @@
 
         .development-language {
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            margin-right: 20px;
+            // margin-right: 20px;
             width: 550px;
             display: flex;
             height: auto;
@@ -122,35 +122,169 @@
 
         .ul-normal {
             line-height: 27px;
-            font-size: medium;
+            font-size: large;
             font-style: italic;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            
+
             width: 550px;
-            opacity: 60%;
+            opacity: 70%;
 
             li {
-                margin-right:0;
+                margin-right: 0;
                 margin-bottom: 20px;
                 transition: padding 0.5s;
 
-                .skill{
-                    color:#589da4
+                .skill {
+                    color: #589da4
                 }
 
-                .language{
+                .language {
                     color: orange;
                     font-weight: bold;
                 }
 
                 &:hover {
-                    color: black;
-                    font-weight: bold;
-                    font-size: larger;
-                    padding-top: 20px;
-                    padding-bottom: 20px;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
                 }
             }
         }
     }
+}
+
+@media screen and (min-width:768px) and (max-width:1280px) {
+
+    //haruko
+    .ocha {
+        margin-left: 100px;
+    }
+
+}
+
+@media screen and (max-width:768px) and (min-width:640px) {
+
+    //H
+    .cv {
+        .ocha {
+            display: block;
+
+            .school-name {
+                position: static;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 50px;
+
+                p {
+                    font-size: larger;
+                    font-style: normal;
+                    text-align: center;
+                    font-weight: bold;
+
+                    span {
+                        display: none;
+                    }
+                }
+
+                .spot {
+                    display: none;
+                }
+            }
+
+            .development-language {
+                justify-content: center;
+
+                li {
+                    justify-content: center;
+                }
+            }
+
+            .ul-normal {
+                justify-content: center;
+
+                li {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .download-cv {
+        span {
+            display: none;
+        }
+    }
+
+    .cv {
+        .ocha {
+            .school-name {
+                position: static;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 50px;
+
+                p {
+                    font-size: larger;
+                    font-style: normal;
+                    text-align: center;
+                    font-weight: bold;
+
+                    span {
+                        display: none;
+                    }
+                }
+
+                .spot {
+                    display: none;
+                }
+            }
+
+            display: block;
+
+            .development-language {
+                width: 90%;
+
+                li {
+                    margin: 8px 3px;
+                    padding: 5px 1px;
+                }
+            }
+
+            .ul-normal {
+                width: 95%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:640px) {//sm
+    .cv {
+        .seperater {
+            font-size: medium;
+            margin: 0;
+        }
+
+        .ocha {
+            font-size: small;
+
+            .development-language {
+                width: 100%;
+
+                li {
+                    margin: 5px 2px;
+                    padding: 2px;
+                    width: 80px;
+                    font-size: small;
+                }
+            }
+
+            .ul-normal {
+                font-size: small;
+            }
+        }
+    }
+
 }

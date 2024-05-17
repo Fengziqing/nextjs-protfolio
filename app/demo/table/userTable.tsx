@@ -24,7 +24,7 @@ const UserTablePage = async ({ sortOrder }: Props) => {
                 <thead>
                     <tr>
                         <td>
-                            <Link href='/users?sortOrder=name'>Name</Link>
+                            <Link href='/users?sortOrder=name' className='font-lg'>Name</Link>
                         </td>
                         <td>
                             <Link href='/users?sortOrder=email'>Email</Link>

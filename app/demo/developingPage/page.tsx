@@ -1,8 +1,12 @@
 import React from 'react'
+import { BacktoDemoButtom } from '../BacktoDemoButtom'
 
 const page = () => {
   return (
-    <div>page</div>
+    <div className=' content-center justify-center'>
+      <BacktoDemoButtom/>
+      <h1>Comming soon!</h1>
+    </div>
   )
 }
 

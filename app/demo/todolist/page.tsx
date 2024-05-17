@@ -68,7 +68,7 @@ const TodoList = () => {
         <div className=" block mx-12 py-12 px-2 content-center justify-center">
             <BacktoDemoButtom/>
             <div className='flex content-center'>
-                <input className='input text-black' type='text' value={taskName} onChange={handleTaskNameChange}></input>
+                <input className='input text-black border-solid border-2 border-gray-300' type='text' value={taskName} onChange={handleTaskNameChange}></input>
                 <button className='btn btn-neutral ml-2' onClick={addTask}>ADD</button>
             </div>
             <p className=' text-red-500 italic my-2'>{wrongMessage}</p>
@@ -82,7 +82,7 @@ const TodoList = () => {
                                 {item.isEditing
                                     ?
                                     <>
-                                        <input className=' input-ghost text-sm font-normal' type='text' value={editValue} onChange={handleEditValue}></input>
+                                        <input className=' input input-sm border-2 border-solid border-gray-300 text-sm font-normal' type='text' value={editValue} onChange={handleEditValue}></input>
                                         <button className='btn btn-active ml-3 btn-sm' onClick={() => cancelChange(item.id)}>Cancel</button>
                                         <button className='btn btn-neutral ml-3 btn-sm' onClick={() => saveChange(item.id)}>Save</button>
                                     </>

@@ -97,7 +97,7 @@ const Cv = () => {
               <div className="ocha">
                   <div className="school-name">
                       <p>Master degree <br /> <span className="name-explanation"
-                          onClick={()=>handleClick("https://www.ocha.ac.jp/index.html")}>Ochanomizu University</span> <br /><span>Tokyo, Japa</span> <br /> <span>2020 - 2022</span>
+                          onClick={()=>handleClick("https://www.ocha.ac.jp/index.html")}>Ochanomizu University</span> <br /><span>Tokyo, Japan</span> <br /> <span>2020 - 2022</span>
                       </p>
                       <Image className="spot" src={spot} alt="spot" />
                   </div>
