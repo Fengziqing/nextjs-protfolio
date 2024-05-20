@@ -7,29 +7,30 @@ import avatar from '@/public/images/avatar.png';
 import biglogo from '@/public/images/biglogo.png';
 import smalllogo from '@/public/images/smalllogo.png';
 import Navigation from './navBarComponents/Navigation';
+import { ThemeButtom } from './navBarComponents/ThemeButtom';
 
 const NavBar = () => {
-    
-    const [show,setShow] = useState(false);
-    const [lastScrollY,setLastScrollY] = useState(0);
+
+    const [show, setShow] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
 
-    function controlNavbar () {
-        if(window.scrollY < lastScrollY){
+    function controlNavbar() {
+        if (window.scrollY < lastScrollY) {
             setShow(false);
-        }else{
+        } else {
             setShow(true);
         }
 
         setLastScrollY(window.scrollY);
     }
 
-    useEffect(()=>{
-        window.addEventListener('scroll',controlNavbar);
+    useEffect(() => {
+        window.addEventListener('scroll', controlNavbar);
         return () => {
-            window.removeEventListener('scroll',controlNavbar);
+            window.removeEventListener('scroll', controlNavbar);
         };
-    },[lastScrollY]);
+    }, [lastScrollY]);
 
     return (
         <div className={`${show && ' hidden'} bg-navGreen flex fixed justify-center w-full h-12 z-50
@@ -39,7 +40,7 @@ const NavBar = () => {
                 <Image src={smalllogo} alt='small-H' width={39} height={39} className="mx-4 my-1 sm:my-2" />
             </Link>
             <Link href='/' className='hidden md:block xl:hidden'>
-                <Image src={biglogo} alt='haruko' width={150} className='mx-4'/>
+                <Image src={biglogo} alt='haruko' width={150} className='mx-4' />
             </Link>
             <Navigation />
             <Link href='/' className='hidden xl:flex'>
@@ -55,11 +56,12 @@ const NavBar = () => {
                 <li>Live in China</li>
                 <li>Language: Japanese, English, Chinese</li>
             </ul>
-            <div className="hidden xl:flex justify-center mt-20">
+            <div className="hidden xl:flex justify-center mt-16">
                 <LinkIcon srcPic="images/email.svg" link="https://mail.google.com/mail/u/0/?view=cm&amp&fs=1&amp&tf=1&amp&source=mailto&amp&to=fengziqing970202@gmail.com" />
                 <LinkIcon srcPic="images/linkedin.svg" link="http://www.linkedin.com/in/ziqing-feng" />
                 <LinkIcon srcPic="images/github.svg" link="https://github.com/Fengziqing" />
             </div>
+            <ThemeButtom/>
         </div>
     )
 }

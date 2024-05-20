@@ -9,7 +9,6 @@ const Navigation = () => {
 
     return (
         <div className=' m-0 p-0 flex overflow-clip justify-center font-bold opacity-80 text-justify
-                        
                         xl:bg-navBrown xl:shadow-[3px_5px_0_0_#d6ae7e] xl:rounded-3xl'>
             {[['Home', "/home"],
             ['CV', "/cv"],

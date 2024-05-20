@@ -39,7 +39,7 @@ const config: Config = {
     require("daisyui")
   ],
   daisyui: {
-    themes: ["cupcake"],
+    themes: ["cupcake","dark"],
   }
 };
 export default config;
