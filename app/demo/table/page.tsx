@@ -11,7 +11,7 @@ interface Props {
 
 const UserPage = async ({ searchParams: { sortOrder } }: Props) => {
     return (
-        <div className='py-12 px-2'>
+        <div className='mx-12 py-12 px-2'>
             <BacktoDemoButtom />
 
             <h1>Table Demo(Click Name and Email to sort data)</h1>
