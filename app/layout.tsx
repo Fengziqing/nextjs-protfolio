@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "./NavBar";
 import smalllogo from "@/assets/smalllogo.png";
+import { ThemeProvider } from "next-themes";
 
 //font use poppins
 const Poppin = Poppins({
@@ -27,6 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ThemeProvider>
     <html lang="en" className="h-full bg-webPink dark:bg-[#567119]">
         <body className={`${Poppin.className} relative flex justify-center h-auto xl:justify-normal`}>
           <NavBar />
@@ -39,5 +41,6 @@ export default function RootLayout({
           </main>
         </body>
     </html>
+    </ThemeProvider>
   );
 }
