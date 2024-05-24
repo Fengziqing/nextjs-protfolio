@@ -11,7 +11,7 @@ export const ThemeButtom = () => {
     },[systemTheme])
 
     return (
-        <div className='flex justify-center content-center xl:mt-5 xl:mr-5 xl:relative absolute right-3 sm:top-3 top-2 tooltip tooltip-bottom' data-tip="switch system appearence to change theme">
+        <div className='flex justify-center content-center xl:mt-5 xl:mr-5 xl:relative absolute right-3 sm:top-3 top-2 tooltip xl:tooltip-top tooltip-left' data-tip="switch system appearence to modify light/dark mode">
             <label className="swap swap-rotate p-1 bg-white dark:bg-black opacity-70 rounded-full">
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" checked={currentTheme==='light'? true:false}/>

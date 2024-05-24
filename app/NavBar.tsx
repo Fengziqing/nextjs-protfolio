@@ -33,7 +33,7 @@ const NavBar = () => {
     }, [lastScrollY]);
 
     return (
-        <div className={`${show && ' hidden'} bg-navGreen flex fixed justify-center w-full h-12 z-50
+        <div className={`${show && 'opacity-0 xl:opacity-100'} bg-navGreen flex fixed justify-center w-full h-12 z-50 transition-opacity
                         sm:m-2 sm:w-11/12 sm:rounded-3xl sm:h-14
                         xl:rounded-none xl:rounded-tr-3xl xl:block xl:m-0 xl:p-9 xl:w-1/3 xl:h-full`}>
             <Link href='/' className='md:hidden'>
