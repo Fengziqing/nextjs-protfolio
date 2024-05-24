@@ -39,6 +39,6 @@ const config: Config = {
     require("daisyui")
   ],
   //如何使用daizyUI theme: https://youtube.com/watch?v=ZxrNzv0rEws&t=439s
-  darkMode:"class",
+  darkMode:"media",
 };
 export default config;

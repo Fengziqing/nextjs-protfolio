@@ -20,14 +20,14 @@ const UserTablePage = async ({ sortOrder }: Props) => {
 
     return (
         <div className='block'>
-            <table className='table table-bordered'>
+            <table className='table table-bordered dark:text-white'>
                 <thead>
-                    <tr>
+                    <tr className='text-lg'>
                         <td>
-                            <Link href='/users?sortOrder=name' className='font-lg'>Name</Link>
+                            <Link href='/demo/table/users?sortOrder=name'>Name</Link>
                         </td>
                         <td>
-                            <Link href='/users?sortOrder=email'>Email</Link>
+                            <Link href='/demo/table/users?sortOrder=email'>Email</Link>
                         </td>
                     </tr>
                 </thead>

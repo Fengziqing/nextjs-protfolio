@@ -128,7 +128,7 @@ const ContaceMe = () => {
             </label>
             <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
             <button className="btn btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
-                               hover:text-gray-500 hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
+                               hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
           </form>
         </div>
       </div>

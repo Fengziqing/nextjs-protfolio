@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-webPink dark:bg-[#567119]">
       <body className={`${Poppin.className} relative flex justify-center h-auto xl:justify-normal`}>
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="media">
           <NavBar />
           <main className="
                 w-auto justify-center mt-16

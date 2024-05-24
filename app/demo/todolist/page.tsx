@@ -65,7 +65,7 @@ const TodoList = () => {
     }
 
     return (
-        <div className=" block mx-12 py-12 px-2 content-center justify-center">
+        <div className=" block mx-12 py-12 px-2 justify-center min-h-[100vh]">
             <BacktoDemoButtom/>
             <div className='flex content-center'>
                 <input className='input border-solid border-2 border-gray-300' type='text' value={taskName} onChange={handleTaskNameChange}></input>
