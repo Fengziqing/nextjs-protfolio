@@ -38,8 +38,7 @@ const config: Config = {
   plugins: [
     require("daisyui")
   ],
-  daisyui: {
-    themes: ["cupcake","dark"],
-  }
+  //如何使用daizyUI theme: https://youtube.com/watch?v=ZxrNzv0rEws&t=439s
+  darkMode:"class",
 };
 export default config;

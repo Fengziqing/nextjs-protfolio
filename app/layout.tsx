@@ -28,19 +28,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider>
     <html lang="en" className="h-full bg-webPink dark:bg-[#567119]">
-        <body className={`${Poppin.className} relative flex justify-center h-auto xl:justify-normal`}>
+      <body className={`${Poppin.className} relative flex justify-center h-auto xl:justify-normal`}>
+        <ThemeProvider attribute="class">
           <NavBar />
           <main className="
-        w-auto justify-center mt-16
-        sm:mt-20
-        md:mt-16
-        xl:h-full xl:w-2/3 xl:ml-[calc(35%)] xl:mt-0 xl:p-3.5">
+                w-auto justify-center mt-16
+                sm:mt-20
+                md:mt-16
+                xl:h-full xl:w-2/3 xl:ml-[calc(35%)] xl:mt-0 xl:p-3.5">
             {children}
           </main>
-        </body>
+        </ThemeProvider>
+      </body>
     </html>
-    </ThemeProvider>
   );
 }

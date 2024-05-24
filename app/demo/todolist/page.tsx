@@ -72,9 +72,9 @@ const TodoList = () => {
                 <button className='btn btn-neutral ml-2' onClick={addTask}>ADD</button>
             </div>
             <p className=' text-red-500 italic my-2'>{wrongMessage}</p>
-            <p className=' font-bold text-2xl my-6'>To Do List</p>
+            <p className=' font-bold text-2xl my-6 dark:text-white'>To Do List</p>
             <p className=' text-gray-400 italic text-sm my-5'>*Please notice that this To-Do List will not save any data from you.*</p>
-            <ul className=' font-bold text-lg '>
+            <ul className=' font-bold text-lg'>
                 {
                     task.map(item => {
                         return (
@@ -88,7 +88,7 @@ const TodoList = () => {
                                     </>
                                     :
                                     <>
-                                        <p style={{ textDecoration: item.isDone ? 'line-through' : 'none' }} >{item.name}</p>
+                                        <p style={{ textDecoration: item.isDone ? 'line-through' : 'none' }} className='dark:text-white'>{item.name}</p>
                                         <button className='btn btn-success btn-sm ml-2' onClick={() => handleClickDone(item.id)}>Done</button>
                                         <button className='btn btn-outline btn-sm ml-2' onClick={() => handleClickEdit(item.id)}>Edit</button>
                                     </>}

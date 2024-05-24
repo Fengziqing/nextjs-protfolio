@@ -24,18 +24,18 @@ const Cv = () => {
               <DownloadCV/>
               <div className="seperater">Skills</div>
               <div className="ocha">
-                  <div className="school-name">
+                  <div className="school-name [&>*]:dark:text-white">
                       <p>Language <br /><span> - All professional proficiency or above - </span></p>
                       <Image className="spot" src={spot} alt="spot" />
                   </div>
-                  <ul className="ul-normal">
+                  <ul className="ul-normal [&>*]:dark:text-white">
                       <li>Chinese - native speaker</li>
                       <li>English - working language / IELTS 6.0</li>
                       <li>Japnese - N1</li>
                   </ul>
               </div>
               <div className="ocha">
-                  <div className="school-name">
+                  <div className="school-name [&>*]:dark:text-white">
                       <p>Development</p>
                       <Image className="spot" src={spot} alt="spot" />
                   </div>
@@ -50,21 +50,21 @@ const Cv = () => {
               </div>
               <div className="seperater">Work Experience </div>
               <div className="ocha">
-                  <div className="school-name">
+                  <div className="school-name [&>*]:dark:text-white">
                       <p>Freelancer<br /><span>2023.10 - now</span></p>
                       <Image className="spot" src={spot} alt="spot" />
                   </div>
-                  <ul className="ul-normal">
+                  <ul className="ul-normal [&>*]:dark:text-white">
                       <li>This Website: 100% developed and designed by myself<br /> github: <span className="name-explanation" onClick={()=>handleClick("https://github.com/Fengziqing/portfolio")}>https://github.com/Fengziqing/portfolio</span></li>
                   </ul>
               </div>
               <div className="ocha">
-                  <div className="school-name">
+                  <div className="school-name [&>*]:dark:text-white">
                       <p>Client Engineer<br /> <span className="name-explanation"
                           onClick={()=>handleClick("https://zoom.us/")}>ZOOM</span> <br /><span> HangZhou, China <br />2022 - 2023</span></p>
                           <Image className="spot" src={spot} alt="spot" />
                   </div>
-                  <ul className="ul-normal">
+                  <ul className="ul-normal [&>*]:dark:text-white">
                       <li>Led the development of <span className="name-explanation"
                           onClick={()=>handleClick("https://github.com/Fengziqing/languageTest")}>validation
                           scripts(<span className="language">Python</span>) </span>for ZOOM Mac
@@ -95,13 +95,13 @@ const Cv = () => {
               </div>
               <div className="seperater">Education</div>
               <div className="ocha">
-                  <div className="school-name">
+                  <div className="school-name [&>*]:dark:text-white">
                       <p>Master degree <br /> <span className="name-explanation"
                           onClick={()=>handleClick("https://www.ocha.ac.jp/index.html")}>Ochanomizu University</span> <br /><span>Tokyo, Japan</span> <br /> <span>2020 - 2022</span>
                       </p>
                       <Image className="spot" src={spot} alt="spot" />
                   </div>
-                  <ul className="ul-normal">
+                  <ul className="ul-normal [&>*]:dark:text-white">
                       <li>Computer Science Master degree in <span className="name-explanation"
                           onClick={()=>handleClick("http://is.ocha.ac.jp/~siio/")}>Human-Computer Interaction, Siio Lab
                            </span></li>

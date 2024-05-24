@@ -20,7 +20,7 @@ const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description, demoLinkString
     }
 
     return (
-        <button className={`btn w-96 h-44 rounded-3xl ${bgcolor === '' ? 'bg-[#F0EAE0] opacity-70' : bgcolor} overflow-hidden p-0 border-none text-navBrown
+        <button className={`btn w-96 h-44 rounded-3xl ${bgcolor === '' ? 'bg-[#F0EAE0] opacity-80' : bgcolor} overflow-hidden p-0 border-none text-navBrown
                              hover:shadow-2xl dark:hover:text-white`}
             onClick={handleClick}>
             <div className={`${imgsrc === '' ? 'w-1/5' : 'w-1/2'}
@@ -30,7 +30,7 @@ const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description, demoLinkString
                         onError={({currentTarget}) => currentTarget.style.display = 'none'}/>
             </div>
             <div className={`${imgsrc === '' ? 'w-3/5' : 'w-2/5'} pl-2`}>
-                <p className=' text-lg font-bold text-left mb-1'>{title === '' ? 'developing block' : title}</p>
+                <p className=' text-lg font-bold text-left mb-1 '>{title === '' ? 'developing block' : title}</p>
                 <div className=' text-sm text-left'>{description === '' ? 'place-holder for testing, nothing here, if you have any ideas, please contact me!' : description}</div>
             </div>
         </button>

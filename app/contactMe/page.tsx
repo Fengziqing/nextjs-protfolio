@@ -105,7 +105,7 @@ const ContaceMe = () => {
   }
   return (
       <div className="block text-center">
-        <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed
+        <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed dark:text-white
                       sm:text-2xl sm:p-5
                       xl:text-4xl xl:p-10
                     [&>*]:text-orange-700 dark:[&>*]:text-navBoxShadow [&>*]:font-bold">
