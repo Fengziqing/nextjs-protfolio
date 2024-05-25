@@ -14,7 +14,10 @@ export default function Home() {
       </div>
       <div className=" absolute w-32 h-96 top-0 left-10 bg-blue-200 rounded-full blur-3xl -z-50"></div>
       <div className=" text-2xl h-72 w-10/12 font-normal [&>*]:p-1 [&>*]:text-navBrown [&>*]:text-3xl">
-        <span>Hello!</span> I am <span>Ziqing Feng</span> (Haruko Feng) !
+        <div className=" glass rounded-2xl">
+          <span>Hello!</span> I am <span>Ziqing Feng</span> (Haruko Feng) !
+        <Image className="mt-12 ml-5 rounded-full w-48 h-48 object-cover shadow-2xl" src='/images/selfie.jpg' alt="avatar" width={173} height={173} />
+        </div>
         <br />I am a <span>Software Engineer</span>
         with a <span>Master&apos;s degree in Computer Science</span>.
         <br />I am currently <span>living in China</span>.
@@ -22,7 +25,7 @@ export default function Home() {
         and <span>English</span>.
       </div>
       <Image src='/images/3d-avatar.png' alt="illution" width={200} height={100}
-        className=" h-40 w-auto right-0 absolute" />
+        className=" w-1/2 h-auto right-0 fixed" />
     </div>
   );
 }

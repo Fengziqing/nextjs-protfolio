@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full bg-webPink dark:bg-[#567119]">
+    <html lang="en" className="h-full bg-webPink dark:bg-[#567119]" suppressHydrationWarning>
       <body className={`${Poppin.className} relative flex justify-center h-auto xl:justify-normal`}>
         <ThemeProvider attribute="media">
           <NavBar />

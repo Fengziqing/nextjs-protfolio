@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import DownloadCV from '@/app/pages/Download';
+import DownloadCV from './Download';
 import spot from '@/public/images/spot.svg';
 import Image from 'next/image';
 import './cv.scss';

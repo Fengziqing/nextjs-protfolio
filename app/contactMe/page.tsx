@@ -1,6 +1,7 @@
 'use client';
-import React, { ChangeEvent, EventHandler, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, Suspense, useState } from 'react';
 import axios from 'axios';
+import Loading from './loading';
 
 const ContaceMe = () => {
   const [name, setName] = useState('');
@@ -15,18 +16,13 @@ const ContaceMe = () => {
   const [nameErrorText, setNameErrorText] = useState('');
   const [messageErrorText, setMessageErrorText] = useState('');
 
-  function colsePopUpWindow() {
-    setSendFailed(false);
-    setSendOk(false);
-  }
-
-  const handleNameChange = (e:ChangeEvent<HTMLInputElement>) => {
+  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
-  const handleEmailChange = (e:ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   };
-  const handleMessageChange = (e:ChangeEvent<HTMLTextAreaElement>) => {
+  const handleMessageChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
 
@@ -44,8 +40,8 @@ const ContaceMe = () => {
     axios.defaults.withCredentials = true;
 
     try {
-      await axios.post('https://vercel-express-eosin.vercel.app/api/contact', data, {
-        // axios.post('http://localhost:3000/api/contact', data, {
+      // await axios.post('https://vercel-express-eosin.vercel.app/api/contact', data, {
+      await axios.post('http://localhost:3000/api/contact', data, {
         headers: {
           'Content-Type': 'application/json',
         }
@@ -64,7 +60,7 @@ const ContaceMe = () => {
     setNeedBlur(false);
   }
 
-  function handleSend(e:FormEvent) {
+  function handleSend(e: FormEvent) {
     e.preventDefault();
     //data checking
     if (name.length === 0) {
@@ -89,7 +85,7 @@ const ContaceMe = () => {
       return;
     }
     if (message.length === 0) {
-      setMessageErrorText('Are you sure you don\'t wanna say anything🥺🥺🥺');
+      setMessageErrorText('Are you sure you don\'t wanna say anything⬆️🥺⬆️');
       setTimeout(() => {
         setMessageErrorText('');
       }, 5000);
@@ -104,6 +100,8 @@ const ContaceMe = () => {
     sendingData();
   }
   return (
+
+    <Suspense fallback={<Loading />}>
       <div className="block text-center">
         <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed dark:text-white
                       sm:text-2xl sm:p-5
@@ -115,23 +113,28 @@ const ContaceMe = () => {
           <br />...
         </p>
         <div className="block w-96 lg:w-[480px] mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl py-8 px-12 mx-auto">
-          <form onSubmit={handleSend} className='[&>*]:my-4 [&>*]:border-none [&>*]:rounded-2xl [&>*]:text-sm
-                                                  [&>*]:sm:my-6 [&>*]:sm:text-base
-                                                  [&>*]:lg:my-8 [&>*]:lg:text-lg'>
+          <form onSubmit={handleSend} className='*:my-4 *:border-none *:rounded-2xl *:text-sm 
+                                                [&>p]:text-red-500 [&>p]:mx-2 [&>p]:text-left
+                                                  *:sm:my-6 *:sm:text-base
+                                                  *:lg:my-8 *:lg:text-lg'>
             <label className="input input-bordered flex items-center gap-2 ">
               Name
-              <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange}/>
+              <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange} />
             </label>
+            <p>{nameErrorText}</p>
             <label className="input input-bordered flex items-center gap-2">
               Email
-              <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange}/>
+              <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange} />
             </label>
+            <p>{emailErrorText}</p>
             <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
+            <p>{messageErrorText}</p>
             <button className="btn btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
                                hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
           </form>
         </div>
       </div>
+    </Suspense>
   )
 }
 

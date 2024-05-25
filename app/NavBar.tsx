@@ -15,17 +15,17 @@ const NavBar = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
 
 
-    function controlNavbar() {
-        if (window.scrollY < lastScrollY) {
-            setShow(false);
-        } else {
-            setShow(true);
+    useEffect(() => {
+        function controlNavbar() {
+            if (window.scrollY < lastScrollY) {
+                setShow(false);
+            } else {
+                setShow(true);
+            }
+    
+            setLastScrollY(window.scrollY);
         }
 
-        setLastScrollY(window.scrollY);
-    }
-
-    useEffect(() => {
         window.addEventListener('scroll', controlNavbar);
         return () => {
             window.removeEventListener('scroll', controlNavbar);
@@ -40,7 +40,7 @@ const NavBar = () => {
                 <Image src={smalllogo} alt='small-H' width={39} height={39} className="mx-4 my-1 sm:my-2" />
             </Link>
             <Link href='/' className='hidden md:block xl:hidden'>
-                <Image src={biglogo} alt='haruko' width={150} className='mx-4' />
+                <Image src={biglogo} alt='haruko' width={0} height={0} className='mx-4 w-36 h-auto' />
             </Link>
             <Navigation />
             <Link href='/' className='hidden xl:flex'>
@@ -48,7 +48,7 @@ const NavBar = () => {
             </Link>
             <div className='hidden xl:flex my-5'>
                 <Link href="/" className="text-navYellow font-bold text-4xl ms-3 drop-shadow-[2px_3px_0_#665048]">Haruko Feng</Link>
-                <span className='my-4 ml-3 text-sm font-base text-neutral-500'>ZiQing Feng(27)</span>
+                <span className='my-4 ml-2 text-sm font-base text-neutral-500'>ZiQing Feng(27)</span>
             </div>
             <ul className='hidden xl:block p-0 italic text-lg text-navFontGray justify-center ml-5 space-y-4 list-disc font-light'>
                 <li>Software Engineer, Client Engineer</li>
