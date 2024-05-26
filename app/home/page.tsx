@@ -10,7 +10,7 @@ import VerticalRectangle from '../bentoComponents/VerticalRectangle';
 const HomePage = () => {
   return (
     <div className='xl:w-11/12 xl:block w-full justify-center'>
-      <div className='grid md:grid-cols-row-col-8 md:grid-rows-row-col-8 gap-3 [&>*]:m-3
+      <div className='grid md:grid-cols-row-col-8 md:grid-rows-row-col-8 sm:gap-3 [&>*]:m-3 justify-center
                        grid-cols-col-4'>
         <BentoTitle content='Hello! I am Ziqing Feng (Haruko Feng), Here are some infromation about me 😀🌍!' />
         <div className='col-start-1 col-end-5 row-start-2 row-end-3'>
@@ -36,7 +36,7 @@ const HomePage = () => {
                          col-start-1 col-end-3 row-start-10 row-end-12">
           <Squar imgsrc='/images/freelancer.svg' imgalt='Freelancer' name='Freelancer' />
         </div>
-        <div className="rounded-badge w-96 h-44 overflow-hidden shadow-xl
+        <div className="rounded-badge sm:w-96 w-[350px] sm:h-44 h-40 overflow-hidden shadow-xl
                         md:col-start-1 md:col-end-5 md:row-start-7 md:row-end-9
                         col-start-1 col-end-5 row-start-14 row-end-15">
           <iframe
@@ -55,15 +55,15 @@ const HomePage = () => {
         </div>
         <div className="md:col-start-7 md:col-end-9 md:row-start-5 md:row-end-9 text-center
                         col-start-3 col-end-5 row-start-10 row-end-13">
-          <div className="bg-[#b2bd8c] w-44 rounded-badge h-96 shadow-lg relative">
+          <div className="bg-[#b2bd8c] sm:w-44 w-40 rounded-badge sm:h-96 h-[350px] shadow-lg relative">
             <div className=" left-1 top-1 right-1 h-32 absolute rounded-badge opacity-50 bg-orange-100"></div>
-            <Image src='/images/coding.svg' alt='coding/developer' width={180} height={180} className='relative object-cover h-auto mt-2' />
+            <Image src='/images/coding.svg' alt='coding/developer' width={180} height={180} className='relative object-cover h-auto' />
             {['Software Engineer', 'Frontend Developer', 'Full-stack Developer', 'Client Engineer'].map(item =>
-              <p key={item} className='font-bold -bottom-4 my-6 text-yellow-950 relative drop-shadow-[2px_1px_0_#d3dfde]'>{item}</p>)}
+              <p key={item} className='font-bold -bottom-4 sm:my-6 my-2 text-yellow-950 relative drop-shadow-[2px_1px_0_#d3dfde]'>{item}</p>)}
           </div>
         </div>
       </div>
-      <div className="grid gap-3 [&>*]:m-3
+      <div className="grid sm:gap-3 [&>*]:m-3 justify-center
                       md:grid-cols-row-col-8 md:grid-rows-row-13 
                       grid-cols-col-4">
         <BentoTitle content='I love taking pictures with my friends~ 📷🍃' />

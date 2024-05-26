@@ -32,7 +32,7 @@ export default function Home() {
         <br />I can speak <span className=" text-navFontGray dark:text-gray-300">Chinese, Japanese and English</span>.
       </div>
       <Image src='/images/3d-avatar.png' alt="illution" width={250} height={130}
-        className="right-0 absolute sm:-bottom-40 -bottom-44" />
+        className="right-0 absolute md:-bottom-40 sm:-bottom-60 -bottom-72" />
     </div>
   );
 }

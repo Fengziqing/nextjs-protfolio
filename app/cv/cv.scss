@@ -18,21 +18,10 @@
         text-decoration: underline;
         font-weight: bolder;
         position: relative;
-        margin-right: 18px;
 
         &:hover {
             color: pink;
         }
-    }
-
-    .name-explanation::after {
-        content: '';
-        height: 16px;
-        width: 16px;
-        position: absolute;
-        bottom: 1px;
-        background-image: url('link.svg');
-        background-size: cover;
     }
 
     .ocha {

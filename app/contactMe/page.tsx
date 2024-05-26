@@ -112,8 +112,8 @@ const ContaceMe = () => {
           <br />Wanna Be friends with me?<span> Leave a message!⬇️</span>
           <br />...
         </p>
-        <div className="block w-96 lg:w-[480px] mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl py-8 px-12 mx-auto">
-          <form onSubmit={handleSend} className='*:my-4 *:border-none *:rounded-2xl *:text-sm 
+        <div className="block sm:w-96 lg:w-[480px] w-80 mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl sm:py-8 py-6 sm:px-12 px-9 mx-auto">
+          <form onSubmit={handleSend} className='*:my-3 *:border-none *:rounded-2xl *:text-sm 
                                                 [&>p]:text-red-500 [&>p]:mx-2 [&>p]:text-left
                                                   *:sm:my-6 *:sm:text-base
                                                   *:lg:my-8 *:lg:text-lg'>
@@ -129,7 +129,7 @@ const ContaceMe = () => {
             <p>{emailErrorText}</p>
             <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
             <p>{messageErrorText}</p>
-            <button className="btn btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
+            <button className="btn sm:btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
                                hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
           </form>
         </div>

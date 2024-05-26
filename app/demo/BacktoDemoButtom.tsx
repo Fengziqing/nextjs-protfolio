@@ -9,6 +9,6 @@ export const BacktoDemoButtom = () => {
         router.push('/demo');
     }
     return (
-        <button className='btn btn-wide mb-10' onClick={handleBack}> Back to Demo Page</button>
+        <button className='btn md:btn-wide mb-10' onClick={handleBack}> Back to Demo Page</button>
     )
 }

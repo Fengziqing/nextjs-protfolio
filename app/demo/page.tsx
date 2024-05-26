@@ -5,7 +5,7 @@ import DemoBlock from '../bentoComponents/DemoBlock'
 const Demo = () => {
   return (
     <div className="block">
-      <div className="grid md:grid-cols-row-col-8 md:gird-row-4 gap-3 [&>*]:m-3
+      <div className="grid md:grid-cols-row-col-8 md:gird-row-4 sm:gap-3 [&>*]:m-3 justify-center
                       grid-cols-col-4">
         <BentoTitle content='React Practice Demo' />
         <div className=" col-start-1 col-end-5 row-start-2 row-end-4">
@@ -16,7 +16,7 @@ const Demo = () => {
           <DemoBlock imgsrc='' imgalt='' title='' bgcolor='' description='' demoLinkString='developingPage' />
         </div>
       </div>
-      <div className="grid md:grid-cols-row-col-8 md:grid-rows-8 gap-3 [&>*]:m-3
+      <div className="grid md:grid-cols-row-col-8 md:grid-rows-8 sm:gap-3 [&>*]:m-3 justify-center
                       grid-cols-col-4">
         
         <BentoTitle content='React Component Demo' />
