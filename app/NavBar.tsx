@@ -43,10 +43,10 @@ const NavBar = () => {
                 <Image src={biglogo} alt='haruko' width={0} height={0} className='mx-4 w-36 h-auto' />
             </Link>
             <Navigation />
-            <Link href='/' className='hidden xl:flex'>
+            <Link href='/' style={{animation:'fadeInUp 0.9s'}} className='hidden xl:flex'>
                 <Image className="mt-12 ml-5" src={avatar} alt="avatar" width={173} height={173} />
             </Link>
-            <div className='hidden xl:flex my-5'>
+            <div style={{animation:'fadeInUp 0.9s'}} className='hidden xl:flex my-5'>
                 <Link href="/" className="text-navYellow font-bold text-4xl ms-3 drop-shadow-[2px_3px_0_#665048]">Haruko Feng</Link>
                 <span className='my-4 ml-2 text-sm font-base text-neutral-500'>ZiQing Feng(27)</span>
             </div>

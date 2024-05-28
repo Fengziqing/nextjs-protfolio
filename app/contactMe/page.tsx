@@ -1,7 +1,5 @@
 'use client';
 import React, { ChangeEvent, FormEvent, Suspense, useState } from 'react';
-import axios from 'axios';
-import Loading from './loading';
 
 const ContaceMe = () => {
   const [name, setName] = useState('');
@@ -36,25 +34,25 @@ const ContaceMe = () => {
     setSendButton('Sending');
     setNeedBlur(true);
     setWaiting(true);
-    const data = JSON.stringify(sendData);
-    axios.defaults.withCredentials = true;
-
-    try {
-      // await axios.post('https://vercel-express-eosin.vercel.app/api/contact', data, {
-      await axios.post('http://localhost:3000/api/contact', data, {
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      }).then(response => {
-        setName('');
-        setEmail('');
-        setMessage('');
+    const res = await fetch('http://localhost:3000/api/contact',{
+      method: "post",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(sendData)
+    }).then(response => {
+      console.log(response);
+        // setName('');
+        // setEmail('');
+        // setMessage('');
         setSendOk(true);
       });
-    } catch (error) {
-      setSendFailed(true);
-      console.log(error);
-    }
+    
+    // catch (error) {
+    //   setSendFailed(true);
+    //   console.log(error);
+    // }
     setSendButton('Send');
     setWaiting(false)
     setNeedBlur(false);
@@ -100,19 +98,19 @@ const ContaceMe = () => {
     sendingData();
   }
   return (
-
-    <Suspense fallback={<Loading />}>
-      <div className="block text-center">
-        <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed dark:text-white
+    <div className=" block text-center">
+      <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed dark:text-white
                       sm:text-2xl sm:p-5
                       xl:text-4xl xl:p-10
                     [&>*]:text-orange-700 dark:[&>*]:text-navBoxShadow [&>*]:font-bold">
-          Have an Awsome Idea? <span>Let&apos;s Discuss!🤔</span>
-          <br />Want <span>Hire me</span>? Send me your <span>e-mail!📧</span>
-          <br />Wanna Be friends with me?<span> Leave a message!⬇️</span>
-          <br />...
-        </p>
-        <div className="block sm:w-96 lg:w-[480px] w-80 mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl sm:py-8 py-6 sm:px-12 px-9 mx-auto">
+        Have an Awsome Idea? <span>Let&apos;s Discuss!🤔</span>
+        <br />Want <span>Hire me</span>? Send me your <span>e-mail!📧</span>
+        <br />Wanna Be friends with me?<span> Leave a message!⬇️</span>
+        <br />...
+      </p>
+
+      <Suspense fallback={<p>loading haruharu</p>}>
+        <div style={{animation:'fadeInUp 0.9s'}} className="block sm:w-96 lg:w-[480px] w-80 mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl sm:py-8 py-6 sm:px-12 px-9 mx-auto">
           <form onSubmit={handleSend} className='*:my-3 *:border-none *:rounded-2xl *:text-sm 
                                                 [&>p]:text-red-500 [&>p]:mx-2 [&>p]:text-left
                                                   *:sm:my-6 *:sm:text-base
@@ -133,8 +131,8 @@ const ContaceMe = () => {
                                hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
           </form>
         </div>
-      </div>
-    </Suspense>
+      </Suspense>
+    </div>
   )
 }
 
