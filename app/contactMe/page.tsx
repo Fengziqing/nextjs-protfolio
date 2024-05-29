@@ -1,6 +1,7 @@
 'use client';
 import React, { ChangeEvent, FormEvent, Suspense, useState } from 'react';
 import Image from 'next/image';
+import axios from 'axios';
 
 const ContaceMe = () => {
   const [name, setName] = useState('');
@@ -29,29 +30,29 @@ const ContaceMe = () => {
       'email': email,
       'message': message
     }
-    console.log(sendData);
-
     setEmail('');
     setName('');
     setMessage('');
-    await fetch('https://vercel-express-eosin.vercel.app/api/contact',{
-    // await fetch('http://localhost:3000/api/contact', {
-      method: "post",
+    const data = JSON.stringify(sendData);
+    axios.defaults.withCredentials = true;
+    // console.log(sendData);
+    try{
+      await axios.post('https://vercel-express-eosin.vercel.app/api/contact', data, {
+      // axios.post('http://localhost:3000/api/contact', data, {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(sendData)
+          'Content-Type': 'application/json',
+      }
     }).then(response => {
       sendingDialogue.close();
       (document.getElementById('success')! as HTMLDialogElement).showModal();
       console.log(response);
       //SendOk
-    }).catch(error => {
+    })
+    }catch(error) {
       sendingDialogue.close();
       (document.getElementById('failed')! as HTMLDialogElement).showModal();
       console.log(error);
-    })
+    }
     // setSending(false);
   }
 
@@ -113,15 +114,15 @@ const ContaceMe = () => {
                                                   *:lg:my-8 *:lg:text-lg'>
           <label className="input input-bordered flex items-center gap-2 ">
             Name
-            <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange} />
+            <input type="text" className="grow font-thin" placeholder="haru" value={name} onChange={handleNameChange} />
           </label>
           <p>{nameErrorText}</p>
           <label className="input input-bordered flex items-center gap-2">
             Email
-            <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange} />
+            <input type="text" className="grow" placeholder="haru@feng.com" value={email} onChange={handleEmailChange} />
           </label>
           <p>{emailErrorText}</p>
-          <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
+          <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." value={message} onChange={handleMessageChange}></textarea>
           <p>{messageErrorText}</p>
           <button className="btn sm:btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
                                hover:opacity-90 hover:shadow-sm ">Send</button>
