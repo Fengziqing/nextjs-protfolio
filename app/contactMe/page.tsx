@@ -34,7 +34,8 @@ const ContaceMe = () => {
     setEmail('');
     setName('');
     setMessage('');
-    await fetch('http://localhost:3000/api/contact', {
+    await fetch('https://vercel-express-eosin.vercel.app/api/contact',{
+    // await fetch('http://localhost:3000/api/contact', {
       method: "post",
       headers: {
         'Accept': 'application/json',
