@@ -51,7 +51,7 @@ const HomePage = () => {
         </div>
         <div className="md:col-start-5 md:col-end-7 md:row-start-7 md:row-end-9 [&>*]:bg-[#e5e1bb]
                         col-start-1 col-end-3 row-start-12 row-end-14">
-          <Squar imgsrc="/images/responsible.svg" imgalt='Responsible' name='Responsible' />
+          <Squar imgsrc="/images/Responsible.svg" imgalt='Responsible' name='Responsible' />
         </div>
         <div className="md:col-start-7 md:col-end-9 md:row-start-5 md:row-end-9 text-center
                         col-start-3 col-end-5 row-start-10 row-end-13">
