@@ -117,6 +117,7 @@ const HomePage = () => {
           <HorizontalRectangle imgsrc='/images/tree.jpg' imgalt='' />
         </div>
       </div>
+      <p className=' m-10 sm:text-sm opacity-55 italic'>* This Website is 100% Developed and Designed by © Haruko Feng(ZiQing Feng), All Rights Reserved</p>
     </div>
   )
 }

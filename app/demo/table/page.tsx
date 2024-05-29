@@ -16,7 +16,7 @@ const UserPage = async ({ searchParams: { sortOrder } }: Props) => {
 
             <h1>Table Demo(Click Name and Email to sort data)</h1>
             {/* <button className='btn btn-neutral btn-wide my-3'>New User</button> */}
-            <Suspense fallback={<p>loading...</p>}>
+            <Suspense fallback={<p>loading data...</p>}>
                 <UserTablePage sortOrder={sortOrder} />
             </Suspense>
             <p className=' italic text-gray-400 my-4'> * table data come from: https://jsonplaceholder.typicode.com/users </p>

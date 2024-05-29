@@ -1,15 +1,11 @@
 'use client';
 import React, { ChangeEvent, FormEvent, Suspense, useState } from 'react';
+import Image from 'next/image';
 
 const ContaceMe = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
-  const [needBlur, setNeedBlur] = useState(false);
-  const [waiting, setWaiting] = useState(false);
-  const [sendOk, setSendOk] = useState(false);
-  const [sendFailed, setSendFailed] = useState(false);
-  const [sendButton, setSendButton] = useState('Send');
   const [emailErrorText, setEmailErrorText] = useState('');
   const [nameErrorText, setNameErrorText] = useState('');
   const [messageErrorText, setMessageErrorText] = useState('');
@@ -25,37 +21,37 @@ const ContaceMe = () => {
   };
 
   async function sendingData() {
+    //Sending
+    const sendingDialogue = document.getElementById('message_sending')! as HTMLDialogElement;
+    sendingDialogue.showModal();
     const sendData = {
       'name': name,
       'email': email,
       'message': message
     }
     console.log(sendData);
-    setSendButton('Sending');
-    setNeedBlur(true);
-    setWaiting(true);
-    const res = await fetch('http://localhost:3000/api/contact',{
+
+    setEmail('');
+    setName('');
+    setMessage('');
+    await fetch('http://localhost:3000/api/contact', {
       method: "post",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body:JSON.stringify(sendData)
+      body: JSON.stringify(sendData)
     }).then(response => {
+      sendingDialogue.close();
+      (document.getElementById('success')! as HTMLDialogElement).showModal();
       console.log(response);
-        // setName('');
-        // setEmail('');
-        // setMessage('');
-        setSendOk(true);
-      });
-    
-    // catch (error) {
-    //   setSendFailed(true);
-    //   console.log(error);
-    // }
-    setSendButton('Send');
-    setWaiting(false)
-    setNeedBlur(false);
+      //SendOk
+    }).catch(error => {
+      sendingDialogue.close();
+      (document.getElementById('failed')! as HTMLDialogElement).showModal();
+      console.log(error);
+    })
+    // setSending(false);
   }
 
   function handleSend(e: FormEvent) {
@@ -97,6 +93,7 @@ const ContaceMe = () => {
     }
     sendingData();
   }
+
   return (
     <div className=" block text-center">
       <p className=" text-center w-full p-3 justify-center text-lg leading-relaxed dark:text-white
@@ -108,30 +105,64 @@ const ContaceMe = () => {
         <br />Wanna Be friends with me?<span> Leave a message!⬇️</span>
         <br />...
       </p>
-
-      <Suspense fallback={<p>loading haruharu</p>}>
-        <div style={{animation:'fadeInUp 0.9s'}} className="block sm:w-96 lg:w-[480px] w-80 mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl sm:py-8 py-6 sm:px-12 px-9 mx-auto">
-          <form onSubmit={handleSend} className='*:my-3 *:border-none *:rounded-2xl *:text-sm 
+      <div style={{ animation: 'fadeInUp 0.9s' }} className="block sm:w-96 lg:w-[480px] w-80 mt-2 mb-10 text-center shadow-2xl bg-[#e8c8be] dark:bg-[#AEA885] rounded-3xl sm:py-8 py-6 sm:px-12 px-9 mx-auto">
+        <form onSubmit={handleSend} className='*:my-3 *:border-none *:rounded-2xl *:text-sm 
                                                 [&>p]:text-red-500 [&>p]:mx-2 [&>p]:text-left
                                                   *:sm:my-6 *:sm:text-base
                                                   *:lg:my-8 *:lg:text-lg'>
-            <label className="input input-bordered flex items-center gap-2 ">
-              Name
-              <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange} />
-            </label>
-            <p>{nameErrorText}</p>
-            <label className="input input-bordered flex items-center gap-2">
-              Email
-              <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange} />
-            </label>
-            <p>{emailErrorText}</p>
-            <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
-            <p>{messageErrorText}</p>
-            <button className="btn sm:btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
-                               hover:opacity-90 hover:shadow-sm ">{sendButton}</button>
-          </form>
+          <label className="input input-bordered flex items-center gap-2 ">
+            Name
+            <input type="text" className="grow font-thin" placeholder="haru" onChange={handleNameChange} />
+          </label>
+          <p>{nameErrorText}</p>
+          <label className="input input-bordered flex items-center gap-2">
+            Email
+            <input type="text" className="grow" placeholder="haru@feng.com" onChange={handleEmailChange} />
+          </label>
+          <p>{emailErrorText}</p>
+          <textarea className="textarea textarea-bordered w-full " placeholder="Leave your messages here ..." onChange={handleMessageChange}></textarea>
+          <p>{messageErrorText}</p>
+          <button className="btn sm:btn-wide text-white bg-[#deb0bd] dark:bg-gray-500 shadow-lg
+                               hover:opacity-90 hover:shadow-sm ">Send</button>
+        </form>
+      </div>
+
+      <dialog id="message_sending" className=" modal">
+        <div className="modal-box bg-[#9A7EAE]">
+          <span className="loading loading-dots loading-md text-[#EBEDD4]"></span>
+          <h3 className="font-bold text-lg text-[#EBEDD4]">Your Message is Sending...</h3>
+          <Image className=' mx-auto' src='/images/sending-email.svg' alt='sending' width={100} height={100} />
+          <p className=' italic text-[#D3BA83]'>*You will receive a confirmation email if the message is sent successfully.*</p>
         </div>
-      </Suspense>
+      </dialog>
+
+      <dialog id="success" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box bg-[#B6C796]">
+          <Image className=' mx-auto mb-2' src='/images/messages-sended.svg' alt='messages-sended' width={100} height={100} />
+          <h3 className="font-bold sm:text-lg text-sm">Message Sended!</h3>
+          <div className="modal-action">
+            <form method="dialog" className='mx-auto'>
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn btn-success">OK</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="failed" className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box bg-[#B63231]">
+          <Image className=' mx-auto mb-2' src='/images/messages-sended-fail.svg' alt='messages-sended' width={100} height={100} />
+          <h3 className="font-bold sm:text-lg text-sm">Oops!</h3>
+          <p className="py-4">There was an error while attempting to send the email. Please try again later.
+            <br /><br /> If the issue persists, you can directly email to fengziqing970202@gmail.com</p>
+          <div className="modal-action">
+            <form method="dialog" className='mx-auto'>
+              {/* if there is a button in form, it will close the modal */}
+              <button className="btn btn-warning">OK</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   )
 }

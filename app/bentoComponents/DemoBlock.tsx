@@ -25,7 +25,7 @@ const DemoBlock = ({ imgsrc, imgalt, title, bgcolor, description, demoLinkString
             onClick={handleClick}>
             <div className={`${imgsrc === '' ? 'w-1/5' : 'w-1/2'}
                                 h-5/6 rounded-3xl border-2 border-solid border-gray-400 overflow-hidden`} >
-                <Image src={imgsrc === '' ? imgsrc : '/images/todolist.png'} alt={imgalt} width={200} height={200} 
+                <Image src={`/images/${imgsrc}`} alt={imgalt} width={200} height={200} 
                         className=' h-full object-cover'
                         onError={({currentTarget}) => currentTarget.style.display = 'none'}/>
             </div>

@@ -1,6 +1,6 @@
-import React from 'react'
-import BentoTitle from '../bentoComponents/BentoTitle'
-import DemoBlock from '../bentoComponents/DemoBlock'
+import React from 'react';
+import BentoTitle from '../bentoComponents/BentoTitle';
+import DemoBlock from '../bentoComponents/DemoBlock';
 
 const Demo = () => {
   return (
@@ -9,7 +9,7 @@ const Demo = () => {
                       grid-cols-col-4">
         <BentoTitle content='React Practice Demo' />
         <div className=" col-start-1 col-end-5 row-start-2 row-end-4">
-          <DemoBlock imgsrc='ToDoList' imgalt='ToDoList' title='Todo-List' bgcolor='bg-[#9fb0cf]' description='React - useState Hook, HTML, CSS, Responsible Web Development' demoLinkString='todolist' />
+          <DemoBlock imgsrc='todolist.png' imgalt='ToDoList' title='Todo-List' bgcolor='bg-[#9fb0cf]' description='React - useState Hook, HTML, CSS, Responsible Web Development' demoLinkString='todolist' />
         </div>
         <div className=" md:col-start-5 md:col-end-9 md:row-start-2 md:row-end-4
                          col-start-1 col-end-5 row-start-4 row-end-6">
@@ -21,7 +21,7 @@ const Demo = () => {
         
         <BentoTitle content='React Component Demo' />
         <div className=" col-start-1 col-end-5 row-start-2 row-end-4" >
-          <DemoBlock imgsrc='ToDoList' imgalt='ToDoList' title='Table' bgcolor='bg-[#DFC0C2]' description='111' demoLinkString='table' />
+          <DemoBlock imgsrc='demo-table.png' imgalt='ToDoList' title='Table' bgcolor='bg-[#DFC0C2]' description='React - fetch, table, tr, td, tobody, map, json' demoLinkString='table' />
         </div>
         <div className=" md:col-start-5 md:col-end-9 md:row-start-2 md:row-end-4
                          col-start-1 col-end-5 row-start-4 row-end-6">
