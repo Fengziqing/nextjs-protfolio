@@ -18,20 +18,20 @@ export default function Home() {
           }} />
       </div>
       <div className=" absolute dark:hidden w-64 h-96 bottom-0 right-10 bg-[#9fb0cf] rounded-full blur-3xl -z-50"></div>
-      <div className=" lg:text-2xl text-left h-72 [&>*]:p-1 [&>*]:lg:text-4xl
+      <div style={{animation:'fadeInUp 0.9s'}} className=" lg:text-2xl text-left h-72 [&>*]:p-1 [&>*]:lg:text-4xl
                        sm:text-xl sm:[&>*]:text-3xl
                        text-lg [&>*]:text-2xl">
         <span className=" text-navYellow font-bold drop-shadow-[2px_3px_0_#665048]">Hello!</span>
-        <br />I am <Link href='/home' className=" text-navYellow drop-shadow-[2px_3px_0_#665048] font-bold hover:drop-shadow-[1px_2px_0_#665048]">Ziqing Feng</Link> (Haruko Feng) !
+        <br />I am <Link href='/home' className=" text-navYellow drop-shadow-[2px_3px_0_#665048] font-bold hover:drop-shadow-[1px_2px_0_#665048]">Ziqing Feng </Link> (Haruko Feng) !
         <br />
-        <br />I am a <Link href='/cv' className=" text-navYellow font-bold drop-shadow-[2px_3px_0_#665048] hover:drop-shadow-[1px_2px_0_#665048]">Software Engineer</Link>
+        <br />I am a <Link href='/cv' className=" text-navYellow font-bold drop-shadow-[2px_3px_0_#665048] hover:drop-shadow-[1px_2px_0_#665048]">Software Engineer </Link>
         with a <span className=" text-navFontGray dark:text-gray-300">Master&apos;s degree in Computer Science</span>.
         <br />
         <br />I am currently <span className=" text-navFontGray dark:text-gray-300 ">living in China</span>.
         <br />
         <br />I can speak <span className=" text-navFontGray dark:text-gray-300">Chinese, Japanese and English</span>.
       </div>
-      <Image src='/images/3d-avatar.png' alt="illution" width={250} height={130}
+      <Image style={{animation:'fadeInUp 1s'}} src='/images/3d-avatar.png' alt="illution" width={250} height={130}
         className="right-0 absolute md:-bottom-40 sm:-bottom-60 -bottom-72" />
     </div>
   );
