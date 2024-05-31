@@ -24,10 +24,10 @@ const UserTablePage = async ({ sortOrder }: Props) => {
                 <thead>
                     <tr className='text-lg'>
                         <td>
-                            <Link href='/demo/table/users?sortOrder=name'>Name</Link>
+                            <Link href='/demo/table?sortOrder=name'>Name</Link>
                         </td>
                         <td>
-                            <Link href='/demo/table/users?sortOrder=email'>Email</Link>
+                            <Link href='/demo/table?sortOrder=email'>Email</Link>
                         </td>
                     </tr>
                 </thead>

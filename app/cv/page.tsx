@@ -56,13 +56,13 @@ const Cv = () => {
                     </div>
                     <ul className="ul-normal [&>*]:dark:text-white">
                         <li>This Website: 100% developed and designed by myself
-                            <br /> Development Language: HTML, CSS, Tailwind CSS, Typescript, React, Nextjs, Nodejs, Expressjs ...
+                            <br /> Development Language: HTML, Tailwind CSS, SCSS(cvPage), Typescript, React, Nextjs, Nodejs, Expressjs ...
                             <br /> Github: <span className="name-explanation" onClick={() => handleClick("https://github.com/Fengziqing/nextjs-protfolio")}>https://github.com/Fengziqing/nextjs-protfolio 🔗</span>
                         </li>
                         <li>* 
                             <br /> Old version of my portfolio website (100% developed and designed by me)
                             <br /> Link: <span className="name-explanation" onClick={() => handleClick('https://ziqingfeng-v1.vercel.app/')}>https://ziqingfeng-v1.vercel.app/</span>
-                            <br /> Development Language: HTML, CSS, Javascript, React, Nodejs, Expressjs ...
+                            <br /> Development Language: HTML, SCSS, Javascript, React, Nodejs, Expressjs ...
                             <br /> Github: <span className="name-explanation" onClick={() => handleClick("https://github.com/Fengziqing/portfolio")}>https://github.com/Fengziqing/portfolio 🔗 *</span>
                             <br/>*
                         </li>
