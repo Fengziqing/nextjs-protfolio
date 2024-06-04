@@ -14,12 +14,8 @@ const Poppin = Poppins({
 
 //search engine message
 export const metadata: Metadata = {
-  //why not working?
-  icons: {
-    icon: "/favicon.ico",
-  },
   title: "Haruko Portfolio",
-  description: "This is haruko feng's personal website which 100% developed and designed.",
+  description: "This is haruko feng's personal website which 100% developed and designed by Haruko Feng.",
 };
 
 export default function RootLayout({
