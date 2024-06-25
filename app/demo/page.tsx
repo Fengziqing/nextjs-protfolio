@@ -12,12 +12,12 @@ const Demo = () => {
                 <BentoTitle content="Web3 Demo" />
                 <div className=" col-start-1 col-end-5 row-start-2 row-end-4">
                     <DemoBlock
-                        imgsrc="demo-table.png"
-                        imgalt="ToDoList"
+                        imgsrc="fundme.png"
+                        imgalt="fundme"
                         title="FundMe"
-                        bgcolor="bg-[#DFC0C2]"
-                        description="Solidity - ether.js"
-                        demoLinkString="FundMe"
+                        bgcolor="bg-[#86ABBA]"
+                        description="Solidity - ether.js,hardhat"
+                        demoLinkString="fundme"
                     />
                 </div>
                 <div
@@ -25,12 +25,12 @@ const Demo = () => {
                          col-start-1 col-end-5 row-start-4 row-end-6"
                 >
                     <DemoBlock
-                        imgsrc=""
-                        imgalt=""
-                        title=""
-                        bgcolor=""
-                        description=""
-                        demoLinkString="developingPage"
+                        imgsrc="fundme.png"
+                        imgalt="fundme"
+                        title="Lottery"
+                        bgcolor="bg-[#CBD690]"
+                        description="Solidity - ether.js"
+                        demoLinkString="lottery"
                     />
                 </div>
             </div>
