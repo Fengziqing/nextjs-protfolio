@@ -9,7 +9,7 @@ declare global {
     }
 }
 
-function page() {
+function FundMe() {
     const [Connect, setConnect] = useState("Connect Wallet")
     async function connectWallet() {
         if (typeof window.ethereum !== "undefined") {
@@ -74,4 +74,4 @@ function page() {
     )
 }
 
-export default page
+export default FundMe
