@@ -24,7 +24,7 @@ function FundMe() {
     }, [])
 
     async function getBalance() {
-        if (checkConnection) {
+        if (await checkConnection()) {
             const provider = new ethers.providers.Web3Provider(window.ethereum)
             const balance = await provider.getBalance(contractAddress)
             setSuccessMessage(
