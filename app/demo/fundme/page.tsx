@@ -4,6 +4,7 @@ import { BacktoDemoButtom } from "../BacktoDemoButtom"
 import { MetaMaskInpageProvider } from "@metamask/providers"
 import { abi, contractAddress } from "./constants.js"
 import { ethers } from "ethers"
+import Link from "next/link"
 declare global {
     interface Window {
         ethereum?: MetaMaskInpageProvider
@@ -83,6 +84,12 @@ function FundMe() {
                     value: ethers.utils.parseEther(fundMoney),
                 })
                 await listenFortransactionMine(transactionResponse, provider)
+
+                setSuccessMessage(`thanks for your fund! - ${fundMoney}`)
+                const item = document.getElementById(
+                    "success",
+                )! as HTMLDialogElement
+                item.showModal()
             } catch (error) {
                 setFailedMessage("Some Error Occurred! Fund Canceled")
                 const item = document.getElementById(
@@ -91,12 +98,6 @@ function FundMe() {
                 item.showModal()
                 return
             }
-
-            setSuccessMessage(`thanks for your fund! - ${fundMoney}`)
-            const item = document.getElementById(
-                "success",
-            )! as HTMLDialogElement
-            item.showModal()
         }
     }
 
@@ -131,9 +132,6 @@ function FundMe() {
         <div className="mx-12 py-12 px-2 content-center justify-center">
             <BacktoDemoButtom />
             <h1>Fund Haruko Contract</h1>
-            <p className=" text-yellow-500">
-                Recommend use test network like sepolia or localhost network
-            </p>
             <p className=" text-red-500 font-bold text-xl">
                 Please do NOT use any REAL MONEY for this contract!
             </p>
@@ -145,7 +143,7 @@ function FundMe() {
                 [&>*]:my-3 [&>*]:border-none [&>button]:shadow-lg [&>button]:hover:opacity-90 [&>botton]:hover:shadow-sm
                 dark:bg-[#AEA885]"
             >
-                <h1>Haruko Smart Contract</h1>
+                <h1>Haruko Smart Contract (Sepolia)</h1>
 
                 <button
                     id="balanceBtn"
@@ -189,6 +187,27 @@ function FundMe() {
                     Withdraw
                 </button>
             </div>
+            <p className="text-lg">
+                Recommend use sepolia test network
+                <br />
+                Get free sepolia test network ETH:
+                <br />
+                <Link
+                    href="https://faucets.chain.link/"
+                    className="text-blue-400 hover:underline hover:text-blue-600"
+                >
+                    https://faucets.chain.link/
+                </Link>
+                <br />
+                Check haruko contract on Etherscan:
+                <br />
+                <Link
+                    href="https://sepolia.etherscan.io/address/0x85D02B62E8aAAf7f5e059E7503dE7dD522410ff7#code"
+                    className="text-blue-400 hover:underline hover:text-blue-600"
+                >
+                    Haruko Contract on Sepolia Etherscan
+                </Link>
+            </p>
 
             <dialog id="success" className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box bg-[#B6C796]">

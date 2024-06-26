@@ -135,8 +135,8 @@ const abi = [
         type: "receive",
     },
 ]
-
-const contractAddress = "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512"
+//sepolia test network
+const contractAddress = "0x85D02B62E8aAAf7f5e059E7503dE7dD522410ff7"
 
 module.exports = {
     abi,
