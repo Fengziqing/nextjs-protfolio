@@ -25,7 +25,9 @@ function FundMe() {
 
     async function getBalance() {
         if (await checkConnection()) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum)
+            const provider = new ethers.providers.Web3Provider(
+                window.ethereum as unknown as ethers.providers.ExternalProvider,
+            )
             const balance = await provider.getBalance(contractAddress)
             setSuccessMessage(
                 `current balance is ${ethers.utils.formatEther(balance)}`,
@@ -57,18 +59,23 @@ function FundMe() {
         setFundMoney(e.target.value)
     }
 
-    function listenFortransactionMine(transactionResponse, provider) {
+    function listenFortransactionMine(transactionResponse: any, provider: any) {
         return new Promise((resolve, reject) => {
-            provider.once(transactionResponse.hash, (transactionRecipt) => {
-                console.log("transaction completed with confirmation")
-            })
-            resolve()
+            provider.once(
+                transactionResponse.hash,
+                (transactionRecipt: any) => {
+                    console.log("transaction completed with confirmation")
+                },
+            )
+            resolve
         })
     }
 
     async function fundMe() {
         if (await checkConnection()) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum)
+            const provider = new ethers.providers.Web3Provider(
+                window.ethereum as unknown as ethers.providers.ExternalProvider,
+            )
             const signer = provider.getSigner()
             const contract = new ethers.Contract(contractAddress, abi, signer)
             try {
@@ -95,7 +102,9 @@ function FundMe() {
 
     async function withdraw() {
         if (await checkConnection()) {
-            const provider = new ethers.providers.Web3Provider(window.ethereum)
+            const provider = new ethers.providers.Web3Provider(
+                window.ethereum as unknown as ethers.providers.ExternalProvider,
+            )
             const signer = provider.getSigner()
             const contract = new ethers.Contract(contractAddress, abi, signer)
             try {
@@ -109,8 +118,8 @@ function FundMe() {
                 )! as HTMLDialogElement
                 item.showModal()
             } catch (error) {
-                console.log(error.message)
-                setFailedMessage(error.message)
+                // console.log(error.message)
+                setFailedMessage("Error occurred")
                 const item = document.getElementById(
                     "failed",
                 )! as HTMLDialogElement
