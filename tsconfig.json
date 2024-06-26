@@ -26,7 +26,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts",
-        "app/demo/fundme/ethers-5.2.esm.min.js"
+        "app/demo/FundMe/ethers-5.2.esm.min.js"
     ],
     "exclude": ["node_modules"]
 }
