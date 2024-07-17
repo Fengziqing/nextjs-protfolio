@@ -6,7 +6,7 @@ interface Person {
     number: string
 }
 //aws backend
-const baseUrl = "https://vercel-express-eosin.vercel.app/api/"
+const baseUrl = "https://vercel-express-eosin.vercel.app/api/persons"
 
 const getAll = () => {
     const request = axios.get(baseUrl)
