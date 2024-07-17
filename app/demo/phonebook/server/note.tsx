@@ -6,7 +6,7 @@ interface Person {
     number: string
 }
 //aws backend
-const baseUrl = "http://13.211.222.77:8000/api/persons"
+const baseUrl = "https://13.211.222.77:8000/api/persons"
 
 const getAll = () => {
     const request = axios.get(baseUrl)
