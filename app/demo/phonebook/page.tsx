@@ -87,7 +87,7 @@ const App = () => {
             <Notification message={statusMessgae} />
             <ErrorMessage message={errorMessage} />
             <Filter updateFilter={updateFilter} />
-            <h3>add a new:</h3>
+            <h1>add a new:</h1>
             <PersonsForm
                 persons={persons}
                 createPerson={createPerson}
@@ -97,7 +97,9 @@ const App = () => {
                     number: string
                 }) => updatePerson(person)}
             />
-            <h2>Numbers</h2>
+            <p className="font-bold md:text-xl text-md dark:text-white">
+                Numbers :
+            </p>
             <ShowPersons
                 showPersons={showPersons}
                 deletePerson={(person: {

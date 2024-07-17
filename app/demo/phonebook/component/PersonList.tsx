@@ -12,9 +12,12 @@ interface Props {
 // eslint-disable-next-line no-unused-vars
 const PersonList = ({ person, deleteOne }: Props) => {
     return (
-        <li key={person.id}>
+        <li key={person.id} className="italic my-4">
             {person.name} {person.number}{" "}
-            <button onClick={deleteOne}> delete </button>
+            <button onClick={deleteOne} className="btn btn-sm">
+                {" "}
+                delete{" "}
+            </button>
         </li>
     )
 }

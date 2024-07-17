@@ -54,13 +54,29 @@ export default function PersonsForm({
         <div>
             <form onSubmit={updateList}>
                 <div>
-                    name: <input value={newName} onChange={nameChanged} />
+                    <p className="font-bold md:text-xl text-md dark:text-white">
+                        name:
+                    </p>
+                    <input
+                        value={newName}
+                        onChange={nameChanged}
+                        className=" input input-sm border-none border-gray-300 text-sm font-normal"
+                    />
                 </div>
                 <div>
-                    number: <input value={newNumber} onChange={numberChanged} />
+                    <p className="font-bold md:text-xl text-md dark:text-white">
+                        number:
+                    </p>
+                    <input
+                        value={newNumber}
+                        onChange={numberChanged}
+                        className=" input input-sm border-none border-gray-300 text-sm font-normal"
+                    />
                 </div>
                 <div>
-                    <button type="submit">add</button>
+                    <button type="submit" className="btn btn-neutral m-2">
+                        add
+                    </button>
                 </div>
             </form>
         </div>

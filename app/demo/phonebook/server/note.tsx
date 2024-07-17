@@ -6,7 +6,8 @@ interface Person {
     number: string
 }
 //aws backend
-const baseUrl = "https://vercel-express-eosin.vercel.app/api/persons"
+// const baseUrl = "https://vercel-express-eosin.vercel.app/api/persons"
+const baseUrl = "http://localhost:3000/api/persons"
 
 const getAll = () => {
     const request = axios.get(baseUrl)
@@ -22,7 +23,10 @@ const deletePerson = (person: Person) => {
     const request = axios
         .delete(`${baseUrl}/${person.id}`, { data: { person } })
         .catch((error) => console.log("front end error is", error))
-    return request.then((response: any) => response.data)
+    return request.then((response: any) => {
+        // console.log(response)
+        return response.data
+    })
 }
 
 const update = (person: Person) => {
