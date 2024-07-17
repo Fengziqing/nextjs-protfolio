@@ -30,12 +30,6 @@ export default function RootLayout({
             className="h-full bg-webPink dark:bg-[#567119]"
             suppressHydrationWarning
         >
-            <head>
-                <meta
-                    httpEquiv="Content-Security-Policy"
-                    content="upgrade-insecure-requests"
-                />
-            </head>
             <body
                 className={`${Poppin.className} relative flex justify-center h-auto xl:justify-normal`}
             >
