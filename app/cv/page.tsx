@@ -109,12 +109,19 @@ const Cv = () => {
                     </div>
                     <ul className="ul-normal [&>*]:dark:text-white">
                         <li>
-                            AITO M9 In-Car Motion Gaming (
-                            <span className="skill">Industry First</span>): As a
-                            core developer, conducted model research, training,
-                            and optimization using PyTorch to solve low-light
-                            recognition (30% up). Implemented 3 high-precision
-                            gesture recognition algorithms (
+                            <span
+                                className="name-explanation"
+                                onClick={() =>
+                                    handleClick("https://hima.auto/wenjie/m9/")
+                                }
+                            >
+                                AITO M9 In-Car Motion Gaming
+                            </span>{" "}
+                            (<span className="skill">Industry First</span>): As
+                            a core developer, conducted model research,
+                            training, and optimization using PyTorch to solve
+                            low-light recognition (30% up). Implemented 3
+                            high-precision gesture recognition algorithms (
                             <span className="language">C++</span>), maintaining
                             a stable detection rate of over 99% in vehicle
                             environments. Wrote and maintained unit tests for
@@ -127,8 +134,15 @@ const Cv = () => {
                             .
                         </li>
                         <li>
-                            AITO M9 Gesture-Controlled Door (
-                            <span className="skill">Industry First</span>):
+                            <span
+                                className="name-explanation"
+                                onClick={() =>
+                                    handleClick("https://hima.auto/wenjie/m9/")
+                                }
+                            >
+                                AITO M9 Gesture-Controlled Door
+                            </span>{" "}
+                            (<span className="skill">Industry First</span>):
                             Played a key role in the end-to-end development:
                             conducted model investigation and validation (
                             <span className="language">PyTorch</span>), and
