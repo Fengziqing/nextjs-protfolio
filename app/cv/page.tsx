@@ -7,20 +7,19 @@ import "./cv.scss"
 
 const Cv = () => {
     const language = [
+        "Python",
+        "C++",
         "React",
         "Javascrip",
         "Typescript",
-        "solidity",
-        "ethers.js",
         "HTML",
         "CSS",
+        "Bash",
         "Tailwindcss",
         "Objectice-C",
         "Node.js",
         "Next.js",
         "Express.js",
-        "Python",
-        "C++",
         "C",
     ]
     const tools = ["Git", "hardhat"]
@@ -94,6 +93,71 @@ const Cv = () => {
                     </ul>
                 </div>
                 <div className="seperater">Work Experience </div>
+                <div className="ocha">
+                    <div className="school-name [&>*]:dark:text-white">
+                        <p>
+                            Software Engineer
+                            <br />
+                            <span>Huawei - YinWang (outsource)</span>
+                            <br />
+                            <span>
+                                Shanghai, China <br />
+                                2024.09 - 2025.09
+                            </span>
+                        </p>
+                        <Image className="spot" src={spot} alt="spot" />
+                    </div>
+                    <ul className="ul-normal [&>*]:dark:text-white">
+                        <li>
+                            AITO M9 In-Car Motion Gaming (
+                            <span className="skill">Industry First</span>): As a
+                            core developer, conducted model research, training,
+                            and optimization using PyTorch to solve low-light
+                            recognition (30% up). Implemented 3 high-precision
+                            gesture recognition algorithms (
+                            <span className="language">C++</span>), maintaining
+                            a stable detection rate of over 99% in vehicle
+                            environments. Wrote and maintained unit tests for
+                            C++ modules, achieving over 80% branch coverage to
+                            ensure code reliability.{" "}
+                            <span className="skill">
+                                The flagship feature achieved over 20,000 Weekly
+                                Active Users on the M9
+                            </span>
+                            .
+                        </li>
+                        <li>
+                            AITO M9 Gesture-Controlled Door (
+                            <span className="skill">Industry First</span>):
+                            Played a key role in the end-to-end development:
+                            conducted model investigation and validation (
+                            <span className="language">PyTorch</span>), and
+                            implemented the core functionality (
+                            <span className="language">C++</span>). Contributed
+                            to API design and verification, ensuring robust
+                            system integration.
+                            <span className="skill">
+                                The launched feature achieved over 85% detection
+                                rate and a 40% user adoption rate via OTA in its
+                                first month.
+                            </span>
+                        </li>
+                        <li>
+                            CI/CD Pipeline Improvement: Redesigned and optimized
+                            CI/CD build scripts (
+                            <span className="language">Bash</span>) to support
+                            automated multi-repository fetching and compilation.
+                            This enhancement established the foundation for
+                            scaling team projects by enabling parallel
+                            development.
+                        </li>
+                        <li>
+                            Root-caused and fixed a persistent crash caused by a
+                            dangling pointer from flawed thread lifecycle
+                            management, permanently resolving the issue.
+                        </li>
+                    </ul>
+                </div>
                 <div className="ocha">
                     <div className="school-name [&>*]:dark:text-white">
                         <p>
